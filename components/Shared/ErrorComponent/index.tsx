@@ -4,8 +4,10 @@ import {useRouter} from "next/router";
 
 export default function ErrorComponent({redirect}: { redirect?: boolean}) {
    const router = useRouter();
+
    useEffect(()=> {
-      router.push("/error")
+      if(router.pathname !== "/error")
+         router.push("/error")
    }, [redirect, router])
    return (
       <main className="errorPage">

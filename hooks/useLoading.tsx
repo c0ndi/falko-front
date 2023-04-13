@@ -8,7 +8,7 @@ export const useLoading = (isLoading: boolean) => {
          if(!isLoading) {
             setLoading(false);
          }
-      }, 1000);
+      }, 1500);
 
       () => clearTimeout(timeout);
    }, [isLoading])

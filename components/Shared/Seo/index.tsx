@@ -1,7 +1,7 @@
 import {PropsWithChildren} from "react";
 import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
 import {strapiURL} from "@/config/axios";
-import {StrapiImage} from "@/types/types";
+import {StrapiFile} from "@/types/types";
 import Head from "next/head";
 
 type Seo = {
@@ -11,7 +11,13 @@ type Seo = {
    metaSocialFacebook: {
       title: string;
       description: string;
-      image: StrapiImage;
+      image: StrapiFile;
+      url: string;
+   };
+   metaSocialTwitter: {
+      title: string;
+      description: string;
+      image: StrapiFile;
       url: string;
    };
    keywords?: string;
@@ -87,6 +93,31 @@ export default function Seo({seo}: PropsWithChildren<{ seo: Seo }>) {
                <meta
                   property="og:image"
                   content={strapiURL + seoData.metaSocialFacebook.image?.data.attributes.url}
+               />
+               <meta
+                  property="og:type"
+                  content="article"
+               />
+            </>
+         )}
+
+         {seoData?.metaSocialTwitter && (
+            <>
+               <meta
+                  property="og:title"
+                  content={seoData.metaSocialTwitter.title}
+               />
+               <meta
+                  property="og:url"
+                  content={seoData.metaSocialTwitter.url}
+               />
+               <meta
+                  property="og:description"
+                  content={seoData.metaSocialTwitter.description}
+               />
+               <meta
+                  property="og:image"
+                  content={strapiURL + seoData.metaSocialTwitter.image?.data.attributes.url}
                />
                <meta
                   property="og:type"

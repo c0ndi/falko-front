@@ -1,0 +1,45 @@
+.wrapper {
+  padding: 90px 0;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 580px;
+
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: grab;
+  }
+}
+
+@media(max-width: 1080px) {
+  .wrapper {
+    padding: 0;
+    padding-bottom: 90px;
+  }
+  .imageWrapper {
+    height: 400px;
+  }
+}
+
+@media(max-width: 768px) {
+  .imageWrapper {
+    height: 300px;
+  }
+}
+
+@media(max-width: 529px) {
+  .wrapper {
+    padding-bottom: 40px;
+  }
+  .imageWrapper {
+    height: 220px;
+  }
+}
+
+@media(max-width: 439px) {
+  .imageWrapper {
+    height: 150px;
+  }
+}

@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {getData} from "@/utils/getData";
-import WelcomeLoading from "@/components/Shared/WelcomeLoading";
+import Loading from "@/components/Shared/Loading";
 import ErrorComponent from "@/components/Shared/ErrorComponent";
 import {useLoading} from "@/hooks/useLoading";
 import Navbar from "@/components/Shared/Navbar";
@@ -13,7 +13,7 @@ export default function Layout({children}: { children: ReactNode }) {
    const loading = useLoading(isLoading);
 
    if(loading) {
-      return <WelcomeLoading/>
+      return <Loading/>
    }
 
    if(isError) {
@@ -35,9 +35,7 @@ export default function Layout({children}: { children: ReactNode }) {
       <>
          <Navbar content={nav}/>
 
-         <main className={"pageWrapper"}>
-            {children}
-         </main>
+         {children}
 
          <Footer content={footerContent}/>
       </>

@@ -27,12 +27,13 @@ export default function RichText({desc}: RichText) {
                li: ({node, ...props}) => <li className={s.customLi}>
                   {props.children[0]}
                </li>,
+               pre: ({node, ...props}) => <pre {...props}/>,
                u: ({node, ...props}) => <u {...props}/>,
             }}
             rehypePlugins={[rehypeRaw]}
             remarkPlugins={[remarkGfm]}
          >
-            {DOMpurify.sanitize(desc)}
+            {desc}
          </ReactMarkdown>
       </div>
    )

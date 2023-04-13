@@ -8,15 +8,15 @@
   em {
     font-style: italic;
   }
+
   a {
-    color: var(--primary);
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid #000;
     font-weight: 500;
   }
 
   h1, h2, h3, h4, h5, h6{
-    font-size: 21px;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 700;
     margin-top: 24px;
   }
 
@@ -27,19 +27,18 @@
   }
 
   strong{
-    font-weight: 900;
+    font-weight: 700;
   }
 
   .desc {
     padding: 6px 0;
   }
 
-  blockquote {
-    border-left: 4px solid var(--primary);
+  blockquote, pre {
+    border-left: 4px solid black;
     padding: 6px 24px;
     margin: 16px 0;
     font-style: italic;
-    background: #111;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     position: relative;
@@ -53,20 +52,19 @@
         font-size: 24px;
         position: relative;
         transform: translateY(-24px);
-        color: var(--primary);
+        color: #000;
       }
 
       &::after {
         content: "“";
         font-size: 24px;
-        color: var(--primary);
+        color: #000;
       }
     }
   }
 
   u {
-    text-decoration: none;
-    border-bottom: 1px solid var(--primary);
+    //text-decoration: none;
   }
 }
 
@@ -86,7 +84,7 @@
 
 .customLi {
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Poppins", sans-serif;
 
   &::before {
@@ -96,7 +94,7 @@
     display: inline-block;
     margin-right: 10px;
     transform: translateY(-2px);
-    background: var(--primary);
+    background: #000;
     border-radius: 100px;
   }
 }
@@ -109,7 +107,7 @@
 
 .customDel {
   text-decoration: line-through;
-  text-decoration-color: var(--primary);
+  text-decoration-color: #000;
 }
 
 @media (max-width: 1280px) {
