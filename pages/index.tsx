@@ -16,7 +16,7 @@ export default function Home() {
    }
 
    if (isError) {
-      return <ErrorComponent />
+      return <ErrorComponent/>
    }
 
    const {
@@ -29,8 +29,8 @@ export default function Home() {
 
    return (
       <>
+         <Hero content={hero}/>
          <main className={"pageWrapper"}>
-            <Hero content={hero}/>
             <Collection content={collection}/>
             <OurManga content={ourManga}/>
             <OurStoryboards content={ourStoryboards}/>

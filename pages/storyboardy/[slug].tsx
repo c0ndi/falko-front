@@ -34,7 +34,6 @@ export default function Home() {
       descriptionText,
    } = data.data[0].attributes;
 
-
    return (
       <>
          <Hero content={{title, subheading, cover}}/>

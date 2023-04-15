@@ -18,11 +18,13 @@ export default function AdditionalDescriptionSection({content}: { content: Addit
          </div>
 
          <div className={s.imageWrapper}>
-            <Image
-               src={getSimpleImageUriArray(articleCovers?.data[6])}
-               alt={"AdditionalDescriptionCover"}
-               fill
-            />
+            {articleCovers.data[6] &&
+               <Image
+                  src={getSimpleImageUriArray(articleCovers?.data[6])}
+                  alt={"AdditionalDescriptionCover"}
+                  fill
+               />
+            }
          </div>
       </section>
    )

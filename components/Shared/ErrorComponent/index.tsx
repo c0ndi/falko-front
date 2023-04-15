@@ -1,20 +1,19 @@
 import Link from "next/link";
 import {useEffect} from "react";
 import {useRouter} from "next/router";
+import Image from "next/image";
+import FalkoBlack from "@/public/images/falko-black.png";
 
 export default function ErrorComponent({redirect}: { redirect?: boolean}) {
    const router = useRouter();
 
    useEffect(()=> {
-      if(router.pathname !== "/error")
+      if(router.pathname !== "/404")
          router.push("/error")
    }, [redirect, router])
    return (
       <main className="errorPage">
-         <p className={"logo"}>
-            MF
-            <span>SERVICE</span>
-         </p>
+         <Image src={FalkoBlack} alt={"FalkoBlackLogo"} priority/>
          <h1>Coś poszło nie tak wróć na stronę główną.</h1>
 
          <Link href={"/"}>

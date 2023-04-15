@@ -12,23 +12,35 @@ type CoversSection = {
 export default function CoversSection({covers}: CoversSection) {
    return (
       <section className={s.wrapper}>
-         <Image src={CoversSectionJapaneseText} alt={"Japanese text"} className={s.japaneseText}/>
-         <Image src={CoversSectionJapaneseTextSmall} alt={"Japanese text"} className={s.japaneseTextSmall}/>
+         <Image
+            src={CoversSectionJapaneseText}
+            alt={"Japanese text"}
+            className={s.japaneseText}
+         />
+         <Image
+            src={CoversSectionJapaneseTextSmall}
+            alt={"Japanese text"}
+            className={s.japaneseTextSmall}
+         />
 
          <div>
-            <Image
-               src={getSimpleImageUriArray(covers?.data[4])}
-               alt={"cover"}
-               fill
-            />
+            {covers.data[4] &&
+               <Image
+                  src={getSimpleImageUriArray(covers?.data[4])}
+                  alt={"cover"}
+                  fill
+               />
+            }
          </div>
 
          <div>
-            <Image
-               src={getSimpleImageUriArray(covers?.data[5])}
-               alt={"cover"}
-               fill
-            />
+            {covers.data[5] &&
+               <Image
+                  src={getSimpleImageUriArray(covers?.data[5])}
+                  alt={"cover"}
+                  fill
+               />
+            }
          </div>
       </section>
    )

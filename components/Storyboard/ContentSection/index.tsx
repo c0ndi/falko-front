@@ -20,32 +20,40 @@ export default function ContentSection({content}: PropsWithChildren<{ content: C
 
          <div className={s.imageWrapper}>
             <div className={s.firstContainer}>
-               <Image
-                  src={getSimpleImageUriArray(articleCovers.data[0])}
-                  alt={"First-photo"}
-                  fill
-               />
+               {articleCovers.data[0] &&
+                  <Image
+                     src={getSimpleImageUriArray(articleCovers?.data[0])}
+                     alt={"First-photo"}
+                     fill
+                  />
+               }
             </div>
             <div className={s.secondContainer}>
-               <Image
-                  src={getSimpleImageUriArray(articleCovers.data[1])}
-                  alt={"Second-photo"}
-                  fill
-               />
+               {articleCovers.data[1] &&
+                  <Image
+                     src={getSimpleImageUriArray(articleCovers?.data[1])}
+                     alt={"Second-photo"}
+                     fill
+                  />
+               }
             </div>
             <div className={s.thirdContainer}>
-               <Image
-                  src={getSimpleImageUriArray(articleCovers.data[2])}
-                  alt={"Third-photo"}
-                  fill
-               />
+               {articleCovers.data[2] &&
+                  <Image
+                     src={getSimpleImageUriArray(articleCovers.data[2])}
+                     alt={"Third-photo"}
+                     fill
+                  />
+               }
             </div>
             <div className={s.fourthContainer}>
-               <Image
-                  src={getSimpleImageUriArray(articleCovers.data[3])}
-                  alt={"Fourth-photo"}
-                  fill
-               />
+               {articleCovers.data[3] &&
+                  <Image
+                     src={getSimpleImageUriArray(articleCovers?.data[3])}
+                     alt={"Fourth-photo"}
+                     fill
+                  />
+               }
             </div>
          </div>
       </section>
