@@ -1,6 +1,4 @@
 .imageWrapper {
-  height: 375px;
-  width: 100%;
   position: relative;
 
   img {
@@ -29,5 +27,84 @@
     font-weight: 600;
     font-size: 16px;
     padding-top: 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .imageWrapper {
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .imageWrapper {
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: 829px) {
+  .wrapper {
+    a {
+      display: flex;
+    }
+  }
+
+  .bottomWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px 0;
+
+    a {
+      padding: 0;
+      font-size: 17px;
+    }
+
+    p {
+      padding: 0;
+      text-align: right;
+    }
+
+    p:first-child {
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 439px) {
+  .imageWrapper {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .wrapper {
+    a {
+      display: inline-block;
+    }
+  }
+
+  .bottomWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      padding: 0;
+      font-size: 13px;
+    }
+
+    p {
+      text-align: left;
+    }
   }
 }

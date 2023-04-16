@@ -20,7 +20,8 @@ export default function SingleItem({content}: { content: SingleItemT }) {
                <Image
                   src={getSimpleImageUri(cover)}
                   alt={title}
-                  fill
+                  width={375}
+                  height={375}
                />
             </div>
             <div className={s.bottomWrapper}>

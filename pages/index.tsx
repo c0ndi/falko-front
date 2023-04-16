@@ -36,8 +36,8 @@ export default function Home() {
          />
          <div className={"pageWrapper"}>
             <OurStoryboards content={ourStoryboards}/>
-            <About content={about}/>
          </div>
+         <About content={about}/>
       </>
    )
 }
