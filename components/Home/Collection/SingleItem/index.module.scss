@@ -1,0 +1,33 @@
+.imageWrapper {
+  height: 375px;
+  width: 100%;
+  position: relative;
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+.bottomWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+
+  a {
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+  }
+
+  p {
+    font-size: 14px;
+    padding-top: 4px;
+  }
+
+  p:first-child {
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 0;
+  }
+}

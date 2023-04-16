@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 100px;
   padding: 90px 0;
+  font-family: "Poppins", sans-serif;
 }
 
 .topWrapper {
@@ -59,7 +60,7 @@
 
 .btnNext {
   position: absolute;
-  right: -60px;
+  right: 0;
   width: 40px;
   height: 40px;
   border: 1px solid #000;
@@ -67,12 +68,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 50%;
+  bottom: -50px;
 }
 
 .btnPrev {
   position: absolute;
-  left: -60px;
+  left: 0;
   width: 40px;
   height: 40px;
   border: 1px solid #000;
@@ -80,6 +81,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 50%;
+  bottom: -50px;
   transform: rotate(180deg);
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    padding: 60px 0;
+  }
+
+  .topWrapper {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+    }
+
+    .descB {
+      padding-top: 12px;
+      width: 100%;
+    }
+  }
 }

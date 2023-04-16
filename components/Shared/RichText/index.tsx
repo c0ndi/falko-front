@@ -8,22 +8,29 @@ import DOMpurify from 'dompurify';
 import Link from "next/link";
 
 type RichText = {
-   desc: string
+   desc: string;
+   white: boolean;
 }
 
-export default function RichText({desc}: RichText) {
+export default function RichText({desc, white}: RichText) {
    return (
       <div className={s.wrapper}>
          <ReactMarkdown
             components={{
                blockquote: ({node, ...props}) => <blockquote {...props}/>,
                del: ({node, ...props}) => <span className={s.customDel}>{props.children[0]}</span>,
-               a: ({node, ...props}) => <Link href={String(props.href)} target={"_blank"} {...props}/>,
+               a: ({node, ...props}) => <Link
+                  href={String(props.href)}
+                  target={"_blank"} {...props}
+                  style={{borderBottom: white ? "1px solid #fff" : "1px solid #000"}}
+               />,
                h1: ({node, ...props}) => <h1 className={s.customH1} {...props}/>,
-               p: ({node, ...props}) => <p className={s.desc} {...props} />,
+               p: ({node, ...props}) => <p className={!white ? s.descB : s.descW} {...props} />,
                strong: ({node, ...props}) => <strong className={s.customStrong} {...props} />,
                ul: ({node, ...props}) => <ul className={s.customUl} {...props}/>,
-               ol: ({node, ...props}) => <ol className={s.customOl} type="I" {...props}/>,
+               ol: ({node, ...props}) => <ol
+                  className={s.customOl}
+                  type="I" {...props}/>,
                li: ({node, ...props}) => <li className={s.customLi}>
                   {props.children[0]}
                </li>,

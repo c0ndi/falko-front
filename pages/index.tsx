@@ -30,12 +30,14 @@ export default function Home() {
    return (
       <>
          <Hero content={hero}/>
-         <main className={"pageWrapper"}>
-            <Collection content={collection}/>
-            <OurManga content={ourManga}/>
+         <Collection content={collection}/>
+         <OurManga
+            content={ourManga}
+         />
+         <div className={"pageWrapper"}>
             <OurStoryboards content={ourStoryboards}/>
             <About content={about}/>
-         </main>
+         </div>
       </>
    )
 }

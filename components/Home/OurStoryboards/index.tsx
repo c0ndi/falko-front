@@ -30,9 +30,6 @@ type OurStoryboardsProps = {
 export default function OurStoryboards({content}: PropsWithChildren<{ content: OurStoryboardsProps }>) {
    const {heading, subheading, description, storyboards} = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
-   useEffect(() => {
-      console.log(swiperInstance)
-   })
    return (
       <section className={s.wrapper}>
          <div className={s.topWrapper}>
@@ -46,9 +43,23 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
 
          <div className={s.bottomWrapper}>
             <Swiper
-               slidesPerView={4}
+               slidesPerView={1}
                spaceBetween={16}
                onSwiper={(swiper) => setSwiperInstance(swiper)}
+               breakpoints={{
+                  1080: {
+                     slidesPerView: 4
+                  },
+                  769: {
+                     slidesPerView: 3,
+                  },
+                  639: {
+                     slidesPerView: 2.5,
+                  },
+                  439: {
+                     slidesPerView: 2,
+                  },
+               }}
             >
                {storyboards.data.map((storyboard, index) => (
                   <SwiperSlide key={index}>

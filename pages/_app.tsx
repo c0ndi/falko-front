@@ -1,5 +1,6 @@
 import '@/styles/globals.scss'
 import '@/styles/reset.scss'
+import '@/styles/shared.scss'
 import type {AppProps} from 'next/app'
 import {QueryClient} from "@tanstack/query-core";
 import {QueryClientProvider} from "@tanstack/react-query";
