@@ -1,0 +1,135 @@
+.wrapper {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 40px 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+.newsletter {
+  margin-left: auto;
+  width: 300px;
+
+  p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+}
+
+.input {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  font-size: 14px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+
+  input {
+    border-radius: 5px;
+    padding: 0 24px;
+    width: calc(100% - 40px);
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+}
+
+.data {
+  display: flex;
+}
+
+.iconWrapper {
+  border-left: 1px solid #e5e5e5;
+  cursor: pointer;
+  background: #fff;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  align-items: center;
+}
+
+.ceoName {
+  margin-left: 60px;
+  font-size: 17px;
+  color: #333;
+  font-weight: 600;
+  margin-right: 24px;
+  padding-right: 24px;
+  border-right: 1px solid #666;
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.phone {
+  font-size: 17px;
+  color: #333;
+  margin-right: 24px;
+  padding-right: 24px;
+  border-right: 1px solid #666;
+}
+
+.sending, .success, .error{
+  padding-top: 6px;
+  padding-left: 24px;
+  font-size: 13px !important;
+}
+
+.error {
+  color: #f00 !important;
+}
+
+.success {
+  color: #0c8f00 !important;
+}
+
+@media (max-width: 1280px) {
+  .ceoName {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .newsletter {
+    margin-left: 0;
+  }
+
+  .ceoName {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .data {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .phone {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .ceoName {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+}

@@ -42,11 +42,47 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 0;
     left: 0;
     top: 0;
     object-fit: cover;
     border-radius: 5px;
   }
+
+  img {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .startVideo {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .endVideo {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .socials {
+    display: flex;
+
+    p {
+      padding-right: 24px;
+    }
+
+    img {
+      position: relative;
+    }
+  }
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .contentWrapper {
@@ -75,8 +111,110 @@
   }
 }
 
+.email {
+  font-size: 19px;
+  font-weight: 700;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  p {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.japanText {
+  position: absolute;
+  left: 100px;
+  bottom: -110px;
+}
+
+.socials {
+  bottom: -60px;
+  left: 200px;
+  position: absolute;
+
+  p {
+    font-weight: 600;
+  }
+}
+
+.socialsMobile {
+  display: none;
+}
+
 @media (max-width: 1080px) {
   .wrapper {
-    padding: 60px 12px;
+    padding: 60px 12px 0;
+  }
+
+
+
+  .socialsMobile {
+    margin-top: 24px;
+    display: flex;
+    p {
+      padding-right: 24px;
+    }
+  }
+
+  .japanText {
+    bottom: auto;
+    left: auto;
+    right: 40px;
+    top: -105px;
+  }
+
+  .bottomWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .videoWrapper {
+    width: 100%;
+
+    .socials {
+      display: none;
+    }
+  }
+
+  .contentWrapper {
+    width: 100%;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 769px) {
+  .videoWrapper {
+    height: 400px;
+  }
+
+  .topWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+
+    div {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    img {
+      width: 200px;
+      height: 70px;
+      transform: translateX(-5px);
+    }
+  }
+}
+
+@media (max-width: 629px) {
+  .videoWrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 439px) {
+  .videoWrapper {
+    height: 250px;
   }
 }

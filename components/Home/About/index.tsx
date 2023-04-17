@@ -1,8 +1,18 @@
 import s from './index.module.scss'
 import {StrapiFile} from "@/types/types";
-import {PropsWithChildren} from "react";
+import {PropsWithChildren, useContext, useRef, useState} from "react";
 import Image from "next/image";
 import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import {DataContext} from "@/components/Shared/Layout";
+import Link from "next/link";
+import ArrowWhite from "@/public/icons/arrow-white.svg";
+import JapaneseText from "@/public/images/about-japanese-text.svg";
+import VideoStart from '@/public/images/video-start.svg'
+import VideoEnd from '@/public/images/video-end.svg'
+import YoutubeIcon from '@/public/icons/youtube.svg'
+import InstagramIcon from '@/public/icons/instagram.svg'
+import FacebookIcon from '@/public/icons/facebook.svg'
+
 
 type AboutProps = {
    heading: string;
@@ -18,6 +28,25 @@ type AboutProps = {
 
 export default function About({content}: PropsWithChildren<{ content: AboutProps }>) {
    const {heading, subheading, video, logo, socialLabel, cover, descriptionHeading, descriptionText, infos} = content;
+
+   const {data} = useContext(DataContext);
+
+   const videoElement = useRef(null);
+
+   const [isPlaying, setIsPlaying] = useState(false);
+   const handleVideoControls = () => {
+      if (videoElement !== null) {
+         if (isPlaying) {
+            // @ts-ignore
+            videoElement.current.pause();
+         } else {
+            // @ts-ignore
+            videoElement.current.play();
+         }
+         setIsPlaying((isPlaying) => !isPlaying);
+      }
+   };
+
    return (
       <section className={s.wrapper}>
          <Image
@@ -45,9 +74,69 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
             <div className={s.bottomWrapper}>
                <div className={s.videoWrapper}>
                   <video
-                     controls
+                     controls={false}
+                     disableRemotePlayback
                      src={getSimpleImageUri(video)}
+                     ref={videoElement}
                   />
+
+                  {!isPlaying ?
+                     <Image
+                        src={VideoStart}
+                        alt="photo"
+                        className={s.startVideo}
+                        onClick={handleVideoControls}
+                        height={75}
+                        width={75}
+                     />
+                     :
+                     <Image
+                        src={VideoEnd}
+                        alt="Photo"
+                        className={s.endVideo}
+                        onClick={handleVideoControls}
+                        height={50}
+                        width={50}
+                     />
+                  }
+
+                  <Image
+                     src={JapaneseText}
+                     alt={""}
+                     width={40}
+                     height={200}
+                     className={s.japanText}
+                  />
+
+                  <div className={s.socials}>
+                     <p className={s.socialLabel}>{socialLabel}</p>
+                     <div className={s.socialIcons}>
+                        <Link href={data.youtubeLink} target={"_blank"}>
+                           <Image
+                              src={YoutubeIcon}
+                              alt={""}
+                              width={22}
+                              height={22}
+                           />
+                        </Link>
+                        <Link href={data.instagramLink} target={"_blank"}>
+                           <Image
+                              src={InstagramIcon}
+                              alt={""}
+                              width={18}
+                              height={18}
+                           />
+                        </Link>
+                        <Link href={data.facebookLink} target={"_blank"}>
+                           <Image
+                              src={FacebookIcon}
+                              alt={""}
+                              width={18}
+                              height={18}
+                           />
+                        </Link>
+                     </div>
+                  </div>
                </div>
 
                <div className={s.contentWrapper}>
@@ -60,6 +149,50 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                      {infos.map((info, index) => (
                         <p key={index}>{info.info}</p>
                      ))}
+                  </div>
+
+                  <Link href={`mailto:${data.email}`}>
+                     <div className={s.email}>
+                        <p>
+                           {data.email.toUpperCase()}
+                        </p>
+                        <Image
+                           src={ArrowWhite}
+                           alt={"arrow"}
+                           width={16}
+                           height={16}
+                        />
+                     </div>
+                  </Link>
+
+                  <div className={s.socialsMobile}>
+                     <p className={s.socialLabel}>{socialLabel}</p>
+                     <div className={s.socialIcons}>
+                        <Link href={data.youtubeLink} target={"_blank"}>
+                           <Image
+                              src={YoutubeIcon}
+                              alt={""}
+                              width={22}
+                              height={22}
+                           />
+                        </Link>
+                        <Link href={data.instagramLink} target={"_blank"}>
+                           <Image
+                              src={InstagramIcon}
+                              alt={""}
+                              width={18}
+                              height={18}
+                           />
+                        </Link>
+                        <Link href={data.facebookLink} target={"_blank"}>
+                           <Image
+                              src={FacebookIcon}
+                              alt={""}
+                              width={18}
+                              height={18}
+                           />
+                        </Link>
+                     </div>
                   </div>
                </div>
             </div>
