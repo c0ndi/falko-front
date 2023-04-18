@@ -48,7 +48,8 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
    };
 
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"about"}>
          <Image
             src={getSimpleImageUri(cover)}
             alt={""}

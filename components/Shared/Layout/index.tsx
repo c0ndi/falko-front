@@ -44,7 +44,7 @@ export default function Layout({children}: { children: ReactNode }) {
    }
    return (
       <>
-         <Navbar content={nav}/>
+         <Navbar content={{nav, facebookLink, youtubeLink, instagramLink}}/>
 
          <DataContext.Provider value={{data: data.data.attributes}}>
             {children}

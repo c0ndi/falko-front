@@ -26,7 +26,8 @@ export default function Collection({content}: PropsWithChildren<{ content: Colle
       example_products
    } = content;
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"collection"}>
          <div>
             <p className={s.subheading}>{subheading.toUpperCase()}</p>
             <p className={s.heading}>{heading.toUpperCase()}</p>

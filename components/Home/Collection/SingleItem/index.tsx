@@ -15,7 +15,10 @@ export default function SingleItem({content}: { content: SingleItemT }) {
    const {title, shopLink, price, cover} = content;
    return (
       <article className={s.wrapper}>
-         <Link href={shopLink} target={"_blank"}>
+         <Link
+            href={shopLink}
+            target={"_blank"}
+         >
             <div className={s.imageWrapper}>
                <Image
                   src={getSimpleImageUri(cover)}
@@ -30,12 +33,7 @@ export default function SingleItem({content}: { content: SingleItemT }) {
                   <p className={s.price}>{price}</p>
                </div>
 
-               <Link
-                  href={shopLink}
-                  target={"_blank"}
-               >
-                  <span>Check out</span>
-               </Link>
+               <span>Check out</span>
             </div>
          </Link>
       </article>

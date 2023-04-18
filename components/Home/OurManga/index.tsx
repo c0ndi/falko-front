@@ -30,7 +30,8 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
    const {heading, subheading, cover, content: contentText, mangas} = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"manga"}>
          <Image
             src={getSimpleImageUri(cover)}
             alt={""}

@@ -1,0 +1,136 @@
+.wrapper {
+  position: absolute;
+  padding: 32px 12px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  width: 100%;
+  z-index: 2;
+  transition: 0.3s auto;
+}
+
+.innerWrapper {
+  transition: 0.3s auto;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+
+  .logo {
+    margin: 0 auto;
+    z-index: 3;
+  }
+
+  ul {
+    display: flex;
+    gap: 32px;
+    width: 50%;
+
+    li {
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 50%;
+}
+
+.hamburger {
+  display: none;
+  z-index: 3;
+  transform: translateX(6px)
+}
+
+.mobileMenu {
+  width: 100%;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--primary);
+  transition: 0.5s all;
+  z-index: -1;
+}
+
+.mobileOpen {
+  top: 51px;
+}
+
+.mobileClose {
+  top: -100%;
+}
+
+.linksMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 0;
+  margin: 50% auto 10%;
+  width: 100%;
+  max-width: 1280px;
+  text-align: center;
+  color: #222;
+
+  li {
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+.socialIconsMobile {
+  filter: invert(1);
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 0.9;
+}
+
+@media (max-width: 1080px) {
+  .innerWrapper {
+    ul {
+      order: 2;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      order: 1;
+      margin: 0;
+    }
+  }
+
+  .socialIcons {
+    display: none;
+  }
+}
+
+@media (max-width: 629px) {
+  .wrapper {
+    padding: 16px 12px;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .innerWrapper {
+    ul {
+      display: none;
+    }
+
+    .logo {
+      height: 45px;
+      width: 45px;
+      order: 0;
+      cursor: pointer;
+    }
+  }
+}

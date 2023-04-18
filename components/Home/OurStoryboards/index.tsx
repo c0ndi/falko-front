@@ -31,7 +31,8 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
    const {heading, subheading, description, storyboards} = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"storyboards"}>
          <div className={s.topWrapper}>
             <div>
                <p className={s.subheading}>{subheading}</p>
