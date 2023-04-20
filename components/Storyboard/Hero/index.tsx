@@ -19,6 +19,7 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
             alt={"HeroCover"}
             fill
             draggable={false}
+            priority
          />
 
          <p>{subheading.toUpperCase()}</p>

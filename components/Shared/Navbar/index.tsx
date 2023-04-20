@@ -70,17 +70,19 @@ export default function Navbar({content}: PropsWithChildren<{ content: NavProps 
                ))}
             </ul>
 
-            <Image
-               src={getSimpleImageUri(logoNav)}
-               alt={"Logo"}
-               width={75}
-               height={75}
-               className={s.logo}
-               onClick={() => window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-               }) || setOpen(false)}
-            />
+            <Link href={"/"}>
+               <Image
+                  src={getSimpleImageUri(logoNav)}
+                  alt={"Logo"}
+                  width={75}
+                  height={75}
+                  className={s.logo}
+                  onClick={() => window.scrollTo({
+                     top: 0,
+                     behavior: "smooth",
+                  }) || setOpen(false)}
+               />
+            </Link>
 
             <div className={s.socialIcons}>
                <Link
@@ -131,7 +133,10 @@ export default function Navbar({content}: PropsWithChildren<{ content: NavProps 
             <ul className={s.linksMobile}>
                {navLinks.map((link, index) => (
                   <li key={index}>
-                     <Link href={link.linkUrl} onClick={() => setOpen(false)}>
+                     <Link
+                        href={link.linkUrl}
+                        onClick={() => setOpen(false)}
+                     >
                         <p>{link.linkLabel.toUpperCase()}</p>
                      </Link>
                   </li>

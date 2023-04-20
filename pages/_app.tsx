@@ -11,7 +11,7 @@ const queryClient = new QueryClient()
 
 export default function App({Component, pageProps}: AppProps) {
    const router = useRouter();
-   const layoutPaths = ["/", "/storyboardy/[slug]"];
+   const layoutPaths = ["/", "/storyboardy"];
    const isLayout = layoutPaths.includes(router.pathname);
    return (
       <QueryClientProvider client={queryClient}>

@@ -22,12 +22,11 @@ type OurMangaProps = {
    heading: string;
    subheading: string;
    cover: StrapiFile;
-   content: string;
    mangas: { data: Manga [] };
 }
 
 export default function OurManga({content}: PropsWithChildren<{ content: OurMangaProps }>) {
-   const {heading, subheading, cover, content: contentText, mangas} = content;
+   const {heading, subheading, cover, mangas} = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
    return (
       // @ts-ignore
@@ -37,6 +36,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
             alt={""}
             fill
             className={s.bgCover}
+            priority
          />
          <div className={s.innerWrapper}>
             <div>
@@ -45,13 +45,6 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
             </div>
 
             <div className={s.bottomWrapper}>
-               <div className={s.contentWrapper}>
-                  <RichText
-                     desc={contentText}
-                     white
-                  />
-               </div>
-
                <div className={s.mangasWrapper}>
                   <Swiper
                      slidesPerView={1}
@@ -60,7 +53,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                      onSwiper={(swiper) => setSwiperInstance(swiper)}
                      breakpoints={{
                         1080: {
-                           slidesPerView: 2
+                           slidesPerView: 4,
                         },
                         769: {
                            slidesPerView: 3,
@@ -81,6 +74,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                                     src={getSimpleImageUri(manga.attributes.titleCover)}
                                     alt={manga.attributes.title}
                                     fill
+                                    priority
                                  />
                               </div>
                               <p className={s.mangaTitle}>{manga.attributes.title.toUpperCase()}</p>

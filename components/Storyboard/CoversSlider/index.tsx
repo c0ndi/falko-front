@@ -7,19 +7,21 @@ import Image from "next/image";
 import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
 
 type CoversSlider = {
+   title: string;
    covers: { data: StrapiFileArray [] };
+   slug: string;
 }
 
 SwiperCore.use([Autoplay]);
 
-export default function CoversSlider({covers}: CoversSlider) {
+export default function CoversSlider({title, covers, slug}: CoversSlider) {
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={slug}>
+         <p className={s.title}>{title.toUpperCase()}</p>
          <Swiper
             spaceBetween={8}
-            slidesPerView={1.5}
-            loop={true}
-            autoplay={{delay: 4000}}
+            slidesPerView={1.9}
          >
             {covers.data.map((cover, index) => (
                <SwiperSlide key={index}>
@@ -28,12 +30,12 @@ export default function CoversSlider({covers}: CoversSlider) {
                         src={getSimpleImageUriArray(cover)}
                         alt={"cover-" + index}
                         fill
+                        priority
                      />
                   </div>
                </SwiperSlide>
             ))}
          </Swiper>
-
       </section>
    )
 }

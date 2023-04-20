@@ -3,7 +3,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
   padding: 90px 0;
   font-family: "Poppins", sans-serif;
 }
@@ -12,23 +12,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.descB {
-  width: 500px;
-  text-align: justify;
-}
-
-.cover {
-  height: 350px;
-  position: relative;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
 }
 
 .slide {
@@ -42,7 +25,14 @@
 }
 
 .bottomWrapper {
+  display: flex;
   position: relative;
+  gap: 50px;
+  align-items: center;
+}
+
+.textWrapper {
+  width: 30%;
 }
 
 .badge {
@@ -85,6 +75,37 @@
   transform: rotate(180deg);
 }
 
+.imageWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+
+  width: 70%;
+  height: 400px;
+
+  img {
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+.link {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #000;
+  width: max-content;
+}
+
+.firstContainer { grid-area: 1 / 1 / 3 / 2; position: relative}
+.secondContainer { grid-area: 1 / 2 / 2 / 3; position: relative}
+.thirdContainer { grid-area: 2 / 2 / 3 / 3; position: relative}
+
 @media (max-width: 1080px) {
   .wrapper {
     padding: 60px 0;
@@ -102,4 +123,22 @@
       width: 100%;
     }
   }
+
+  .bottomWrapper {
+    flex-direction: column;
+  }
+
+  .textWrapper {
+    width: 100%;
+    order: 1;
+  }
+
+  .imageWrapper {
+    width: 100%;
+  }
+
+  .link {
+    font-size: 14px;
+  }
 }
+

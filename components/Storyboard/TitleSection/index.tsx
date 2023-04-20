@@ -3,18 +3,16 @@ import Image from "next/image";
 import FalkoRed from "@/public/images/falko-logo-red.png";
 
 type TitleSectionProps = {
-   title: string;
-   subheadingTwo: string;
+   subheading: string;
 }
 
 export default function TitleSection({content}: { content: TitleSectionProps }) {
-   const {title, subheadingTwo} = content;
+   const {subheading} = content;
    return (
       <section className={s.wrapper}>
          <div>
-            <p>{subheadingTwo.toUpperCase()}</p>
             <h2>
-               {title.toUpperCase()}
+               {subheading.toUpperCase()}
             </h2>
          </div>
 

@@ -25,6 +25,7 @@ export default function SingleItem({content}: { content: SingleItemT }) {
                   alt={title}
                   width={375}
                   height={375}
+                  priority
                />
             </div>
             <div className={s.bottomWrapper}>

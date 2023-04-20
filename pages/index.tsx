@@ -8,8 +8,17 @@ import {useQuery} from "@tanstack/react-query";
 import ErrorComponent from "@/components/Shared/ErrorComponent";
 import Loading from "@/components/Shared/Loading";
 
-export default function Home() {
-   const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData("/home")})
+export async function getServerSideProps({req, res}: {req: any, res: any}) {
+   res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=10, stale-while-revalidate=59'
+   )
+   const homeData = await getData("/home")
+   return { props: { homeData } }
+}
+
+export default function Home({homeData}: any) {
+   const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData("/home"), initialData: homeData})
 
    if (isLoading) {
       return <Loading/>

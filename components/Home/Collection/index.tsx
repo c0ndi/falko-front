@@ -19,8 +19,6 @@ export default function Collection({content}: PropsWithChildren<{ content: Colle
    const {
       heading,
       subheading,
-      descriptionHeading,
-      descriptionText,
       storeButtonLabel,
       storeButtonLink,
       example_products
@@ -38,6 +36,7 @@ export default function Collection({content}: PropsWithChildren<{ content: Colle
                src={CollectionJapaneseText}
                alt={""}
                className={s.japaneseText}
+               priority
             />
 
             {example_products.data.map((item, index) => (
@@ -49,10 +48,10 @@ export default function Collection({content}: PropsWithChildren<{ content: Colle
          </div>
 
          <div className={s.bottomWrapper}>
-            <div className={s.description}>
-               <p className={s.descriptionHeading}>{descriptionHeading}</p>
-               <p className={s.descB}>{descriptionText}</p>
-            </div>
+            {/*<div className={s.description}>*/}
+            {/*   <p className={s.descriptionHeading}>{descriptionHeading}</p>*/}
+            {/*   <p className={s.descB}>{descriptionText}</p>*/}
+            {/*</div>*/}
 
             <Link
                href={storeButtonLink}

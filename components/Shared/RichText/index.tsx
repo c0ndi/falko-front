@@ -3,13 +3,11 @@ import s from './index.module.scss'
 // @ts-ignore
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw";
-// @ts-ignore
-import DOMpurify from 'dompurify';
 import Link from "next/link";
 
 type RichText = {
    desc: string;
-   white: boolean;
+   white?: boolean;
 }
 
 export default function RichText({desc, white}: RichText) {
