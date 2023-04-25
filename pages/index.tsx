@@ -7,6 +7,7 @@ import {getData} from "@/utils/getData";
 import {useQuery} from "@tanstack/react-query";
 import ErrorComponent from "@/components/Shared/ErrorComponent";
 import Loading from "@/components/Shared/Loading";
+import Seo from "@/components/Shared/Seo";
 
 export async function getServerSideProps({req, res}: {req: any, res: any}) {
    res.setHeader(
@@ -34,10 +35,12 @@ export default function Home({homeData}: any) {
       ourManga,
       ourStoryboards,
       about,
+      seo
    } = data.data.attributes;
 
    return (
       <>
+         <Seo seo={seo}/>
          <Hero content={hero}/>
          <Collection content={collection}/>
          <OurManga

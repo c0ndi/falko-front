@@ -15,7 +15,6 @@
 
 html {
   overflow-x: hidden;
-  transition: 0.3s;
 }
 
 body {
@@ -73,5 +72,45 @@ img {
     span {
       color: var(--primary);
     }
+  }
+}
+
+.mangaWrapper {
+  .backWrapper {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    color: #fff;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+
+    img {
+      padding-right: 12px;
+      padding-bottom: 2px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    @media(max-width: 621px) {
+      left: 20px;
+      top: 20px;
+    }
+  }
+
+  .back {
+    display: flex;
+    align-items: center;
+  }
+}
+
+a {
+  transition: 0.3s all;
+
+  &:hover {
+    opacity: 0.8;
   }
 }
