@@ -67,7 +67,9 @@ export default function MangaReader({pages, title}: MangaReader) {
                   src={ArrowBackIcon}
                   alt={"Next page"}
                   onClick={() => {
+                     // @ts-ignore
                      book.current.pageFlip().flipPrev()
+                     // @ts-ignore
                      bookMobile.current.pageFlip().flipPrev()
                   }}
                />
@@ -75,7 +77,9 @@ export default function MangaReader({pages, title}: MangaReader) {
                   src={ArrowBackIcon}
                   alt={"Next page"}
                   onClick={() => {
+                     // @ts-ignore
                      book.current.pageFlip().flipNext()
+                     // @ts-ignore
                      bookMobile.current.pageFlip().flipNext()
                   }}
                />

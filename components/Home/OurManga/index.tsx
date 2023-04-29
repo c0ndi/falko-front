@@ -68,7 +68,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                   >
                      {mangas.data.map((manga, index) => (
                         <SwiperSlide key={index}>
-                           <Link href={`/manga/${manga.attributes.slug}`}>
+                           <Link href={`/manga/${manga.attributes.slug}`} prefetch={false}>
                               <div className={s.mangaWrapper}>
                                  <Image
                                     src={getSimpleImageUri(manga.attributes.titleCover)}

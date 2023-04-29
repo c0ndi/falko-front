@@ -65,12 +65,12 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                   <p className={s.heading}>{heading.toUpperCase()}</p>
                </div>
 
-               <Image
-                  src={getSimpleImageUri(logo)}
-                  alt={"FalkoLogoRed"}
-                  width={280}
-                  height={90}
-               />
+               {/*<Image*/}
+               {/*   src={getSimpleImageUri(logo)}*/}
+               {/*   alt={"FalkoLogoRed"}*/}
+               {/*   width={280}*/}
+               {/*   height={90}*/}
+               {/*/>*/}
             </div>
 
             <div className={s.bottomWrapper}>
@@ -102,13 +102,13 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                      />
                   }
 
-                  <Image
-                     src={JapaneseText}
-                     alt={""}
-                     width={40}
-                     height={200}
-                     className={s.japanText}
-                  />
+                  {/*<Image*/}
+                  {/*   src={JapaneseText}*/}
+                  {/*   alt={""}*/}
+                  {/*   width={40}*/}
+                  {/*   height={200}*/}
+                  {/*   className={s.japanText}*/}
+                  {/*/>*/}
 
                   <div className={s.socials}>
                      <p className={s.socialLabel}>{socialLabel}</p>

@@ -36,7 +36,7 @@
   display: grid;
   grid-template-columns: repeat(3, 375px);
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 20px 0 40px;
 }
 
 .slider {
@@ -49,20 +49,44 @@
 
 .japaneseText {
   position: absolute;
-  right: 100px;
+  right: 0px;
   z-index: -1;
-  top: -170px;
+  top: -175px;
+}
+
+.heading {
+  font-size: 32px;
+  color: #420a0a;
+  padding-bottom: 0;
+  border-bottom: 1px solid #420a0a;
+  width: max-content;
+}
+
+.storeGraphicMobile {
+  display: none;
 }
 
 @media (max-width: 1280px) {
+  .wrapper {
+    padding: 24px 12px 60px;
+  }
+
   .itemsWrapper {
     grid-template-columns: repeat(3, 300px);
+  }
+
+  .storeGraphic {
+    display: none;
+  }
+
+  .storeGraphicMobile {
+    display: block;
   }
 }
 
 @media (max-width: 1080px) {
   .wrapper {
-    padding: 60px 12px;
+    padding: 24px 12px 60px;
   }
 
   .japaneseText {
@@ -89,6 +113,10 @@
 }
 
 @media (max-width: 829px) {
+  .wrapper {
+    padding: 24px 12px 60px;
+  }
+
   .itemsWrapper {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
@@ -100,6 +128,10 @@
 }
 
 @media (max-width: 439px) {
+  .wrapper {
+    padding: 0 12px 60px;
+  }
+
   .itemsWrapper {
     grid-template-columns: repeat(1, 1fr);
   }

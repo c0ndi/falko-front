@@ -37,6 +37,7 @@
   width: 70%;
   position: relative;
   height: 500px;
+  filter: drop-shadow(0px 0px 3.2538px rgba(0, 0, 0, 0.25));
 
   video {
     width: 100%;
@@ -132,7 +133,7 @@
 
 .socials {
   bottom: -60px;
-  left: 200px;
+  right: -200px;
   position: absolute;
 
   p {
@@ -148,8 +149,6 @@
   .wrapper {
     padding: 60px 12px 0;
   }
-
-
 
   .socialsMobile {
     margin-top: 24px;
