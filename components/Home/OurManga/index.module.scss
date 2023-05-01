@@ -35,11 +35,9 @@
 
 .mangaWrapper {
   position: relative;
-  height: 375px;
   filter: drop-shadow(0px 0px 10.538px rgba(0, 0, 0, 0.25));
 
   img {
-    object-fit: cover;
     border-radius: 5px;
   }
 }
@@ -103,5 +101,14 @@
 
   .btnPrev {
     left: 0;
+  }
+}
+
+@media (max-width: 429px) {
+  .mangaWrapper {
+    img {
+      width: 200px;
+      height: 300px;
+    }
   }
 }

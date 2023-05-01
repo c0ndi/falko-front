@@ -12,13 +12,14 @@ import VideoEnd from '@/public/images/video-end.svg'
 import YoutubeIcon from '@/public/icons/youtube.svg'
 import InstagramIcon from '@/public/icons/instagram.svg'
 import FacebookIcon from '@/public/icons/facebook.svg'
+import TiktokIcon from '@/public/icons/tiktok.svg'
 
 
 type AboutProps = {
    heading: string;
    subheading: string;
    video: StrapiFile;
-   logo: StrapiFile;
+   videoPoster: StrapiFile;
    descriptionHeading: string;
    descriptionText: string;
    infos: { info: string } [];
@@ -27,7 +28,8 @@ type AboutProps = {
 }
 
 export default function About({content}: PropsWithChildren<{ content: AboutProps }>) {
-   const {heading, subheading, video, logo, socialLabel, cover, descriptionHeading, descriptionText, infos} = content;
+   const {heading, subheading, video, videoPoster, socialLabel, cover, descriptionHeading, descriptionText, infos} = content;
+
 
    const {data} = useContext(DataContext);
 
@@ -80,6 +82,7 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                      disableRemotePlayback
                      src={getSimpleImageUri(video)}
                      ref={videoElement}
+                     poster={videoPoster ? getSimpleImageUri(videoPoster) : ""}
                   />
 
                   {!isPlaying ?
@@ -137,6 +140,14 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                               height={18}
                            />
                         </Link>
+                        <Link href={data.tiktokLink} target={"_blank"}>
+                           <Image
+                              src={TiktokIcon}
+                              alt={""}
+                              width={18}
+                              height={18}
+                           />
+                        </Link>
                      </div>
                   </div>
                </div>
@@ -189,6 +200,14 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                         <Link href={data.facebookLink} target={"_blank"}>
                            <Image
                               src={FacebookIcon}
+                              alt={""}
+                              width={18}
+                              height={18}
+                           />
+                        </Link>
+                        <Link href={data.tiktokLink} target={"_blank"}>
+                           <Image
+                              src={TiktokIcon}
                               alt={""}
                               width={18}
                               height={18}

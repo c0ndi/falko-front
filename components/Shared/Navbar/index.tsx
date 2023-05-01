@@ -8,6 +8,7 @@ import Link from "next/link";
 import YoutubeIcon from "@/public/icons/youtube.svg";
 import InstagramIcon from "@/public/icons/instagram.svg";
 import FacebookIcon from "@/public/icons/facebook.svg";
+import TiktokIcon from "@/public/icons/tiktok.svg";
 
 import {Turn as Hamburger} from 'hamburger-react'
 
@@ -19,13 +20,14 @@ type NavProps = {
    facebookLink: string;
    instagramLink: string;
    youtubeLink: string;
+   tiktokLink: string;
 }
 
 export default function Navbar({content}: PropsWithChildren<{ content: NavProps }>) {
    const [isOpen, setOpen] = useState(false)
 
    const {logoNav, navLinks} = content.nav;
-   const {facebookLink, instagramLink, youtubeLink} = content;
+   const {facebookLink, instagramLink, youtubeLink, tiktokLink} = content;
 
    const [scrollTop, setScrollTop] = useState(0);
 
@@ -113,6 +115,17 @@ export default function Navbar({content}: PropsWithChildren<{ content: NavProps 
                >
                   <Image
                      src={FacebookIcon}
+                     alt={""}
+                     width={18}
+                     height={18}
+                  />
+               </Link>
+               <Link
+                  href={tiktokLink}
+                  target={"_blank"}
+               >
+                  <Image
+                     src={TiktokIcon}
                      alt={""}
                      width={18}
                      height={18}

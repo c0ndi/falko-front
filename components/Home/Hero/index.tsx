@@ -23,8 +23,8 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
             />
 
             <div>
-               <p>{subheading.toUpperCase()}</p>
-               <h1>{heading.toUpperCase()}</h1>
+               {/*<p>{subheading.toUpperCase()}</p>*/}
+               {/*<h1>{heading.toUpperCase()}</h1>*/}
             </div>
          </div>
       </section>

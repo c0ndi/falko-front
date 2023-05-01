@@ -57,7 +57,11 @@ export default function Footer({content}: PropsWithChildren<{ content: FooterPro
                className={s.phone}
             >Tel. {phoneNumber}</Link>
 
-            <p className={s.address}>{address}</p>
+            <Link href={"/policies"}>
+               <p style={{fontWeight: 600}}>
+                  Terms and Conditions
+               </p>
+            </Link>
          </div>
 
          <div className={s.newsletter}>

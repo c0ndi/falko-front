@@ -47,22 +47,22 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
             <div className={s.bottomWrapper}>
                <div className={s.mangasWrapper}>
                   <Swiper
-                     slidesPerView={1}
+                     slidesPerView={4.5}
                      spaceBetween={8}
-
                      onSwiper={(swiper) => setSwiperInstance(swiper)}
                      breakpoints={{
+                        1280: {
+                          slidesPerView: 4.5,
+                        },
                         1080: {
-                           slidesPerView: 4,
+                           slidesPerView: 3.5,
                         },
-                        769: {
-                           slidesPerView: 3,
-                        },
-                        639: {
+                        650: {
                            slidesPerView: 2.5,
+                           spaceBetween: 16,
                         },
-                        439: {
-                           slidesPerView: 2,
+                        1: {
+                           slidesPerView: 1.5,
                         },
                      }}
                   >
@@ -73,7 +73,8 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                                  <Image
                                     src={getSimpleImageUri(manga.attributes.titleCover)}
                                     alt={manga.attributes.title}
-                                    fill
+                                    width={250}
+                                    height={350}
                                     priority
                                  />
                               </div>

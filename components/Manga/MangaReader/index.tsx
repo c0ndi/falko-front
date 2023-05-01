@@ -22,7 +22,6 @@ export default function MangaReader({pages, title}: MangaReader) {
             width={550}
             height={733}
             className={s.book}
-            startPage={pages.data.length - 1}
             ref={book}
          >
             {pages.data.map((page, index) => (
@@ -65,7 +64,7 @@ export default function MangaReader({pages, title}: MangaReader) {
             <div className={s.navigationWrapper}>
                <Image
                   src={ArrowBackIcon}
-                  alt={"Next page"}
+                  alt={"Prev page"}
                   onClick={() => {
                      // @ts-ignore
                      book.current.pageFlip().flipPrev()

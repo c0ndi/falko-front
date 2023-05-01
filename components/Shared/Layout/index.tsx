@@ -27,10 +27,11 @@ export default function Layout({children}: { children: ReactNode }) {
       facebookLink,
       instagramLink,
       youtubeLink,
+      tiktokLink,
       phoneNumber,
       nipNumber,
       address,
-      logoFooter
+      logoFooter,
    } = data.data.attributes;
 
    const footerContent = {
@@ -44,7 +45,7 @@ export default function Layout({children}: { children: ReactNode }) {
    }
    return (
       <>
-         <Navbar content={{nav, facebookLink, youtubeLink, instagramLink}}/>
+         <Navbar content={{nav, facebookLink, youtubeLink, instagramLink, tiktokLink}}/>
 
          <DataContext.Provider value={{data: data.data.attributes}}>
             {children}
