@@ -136,8 +136,12 @@ a {
   article {
     margin: 0 auto;
     width: 500px;
-    padding-top: 200px;
     color: #fff;
+    padding: 200px 12px 0;
+
+    @media (max-width: 529px) {
+      width: 100%;
+    }
 
     h2 {
       font-size: 24px;

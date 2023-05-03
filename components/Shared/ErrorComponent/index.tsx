@@ -14,10 +14,10 @@ export default function ErrorComponent({redirect}: { redirect?: boolean}) {
    return (
       <main className="errorPage">
          <Image src={FalkoBlack} alt={"FalkoBlackLogo"} priority/>
-         <h1>Coś poszło nie tak wróć na stronę główną.</h1>
+         <h1>Something went wrong. Sorry ;/</h1>
 
          <Link href={"/"}>
-            <span>Strona główna</span>
+            <span>Home</span>
          </Link>
       </main>
    )
