@@ -18,6 +18,7 @@ import TiktokIcon from '@/public/icons/tiktok.svg'
 type AboutProps = {
    heading: string;
    subheading: string;
+   secondSubheading: string;
    video: StrapiFile;
    videoPoster: StrapiFile;
    descriptionHeading: string;
@@ -28,7 +29,7 @@ type AboutProps = {
 }
 
 export default function About({content}: PropsWithChildren<{ content: AboutProps }>) {
-   const {heading, subheading, video, videoPoster, socialLabel, cover, descriptionHeading, descriptionText, infos} = content;
+   const {heading, subheading, secondSubheading, video, videoPoster, socialLabel, cover, descriptionHeading, descriptionText, infos} = content;
 
 
    const {data} = useContext(DataContext);
@@ -65,6 +66,7 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                <div>
                   <p className={s.subheading}>{subheading.toUpperCase()}</p>
                   <p className={s.heading}>{heading.toUpperCase()}</p>
+                  <p className={s.subheading}>{secondSubheading.toUpperCase()}</p>
                </div>
 
                {/*<Image*/}

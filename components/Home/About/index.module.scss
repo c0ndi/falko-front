@@ -1,7 +1,7 @@
 @import "@/styles/shared.scss";
 
 .wrapper {
-  padding: 90px 12px;
+  padding: 45px 12px;
   font-family: TsunagiGothic, sans-serif;
 
   & * {
@@ -133,7 +133,7 @@
 
 .socials {
   bottom: -60px;
-  right: -200px;
+  right: -310px;
   position: absolute;
 
   p {
@@ -143,6 +143,10 @@
 
 .socialsMobile {
   display: none;
+}
+
+.descW {
+  font-size: 17px !important;
 }
 
 @media (max-width: 1080px) {
@@ -167,7 +171,8 @@
 
   .bottomWrapper {
     flex-direction: column;
-    gap: 30px;
+    gap: 12px;
+    padding-top: 0;
   }
 
   .videoWrapper {
@@ -214,6 +219,16 @@
 
 @media (max-width: 439px) {
   .videoWrapper {
-    height: 250px;
+    height: 220px;
+  }
+
+  .startVideo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .endVideo {
+    height: 30px;
+    width: 30px;
   }
 }

@@ -21,12 +21,13 @@ type Manga = {
 type OurMangaProps = {
    heading: string;
    subheading: string;
+   secondSubheading: string;
    cover: StrapiFile;
    mangas: { data: Manga [] };
 }
 
 export default function OurManga({content}: PropsWithChildren<{ content: OurMangaProps }>) {
-   const {heading, subheading, cover, mangas} = content;
+   const {heading, subheading, secondSubheading, cover, mangas} = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
    return (
       // @ts-ignore
@@ -42,6 +43,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
             <div>
                <p className={s.subheading}>{subheading.toUpperCase()}</p>
                <p className={s.heading}>{heading.toUpperCase()}</p>
+               <p className={s.subheading}>{secondSubheading.toUpperCase()}</p>
             </div>
 
             <div className={s.bottomWrapper}>

@@ -20,6 +20,7 @@ type Storyboard = {
 type OurStoryboardsProps = {
    heading: string;
    subheading: string;
+   secondSubheading: string;
    description: string;
    storyboards: { data: Storyboard [] };
    newBadge: boolean;
@@ -27,7 +28,7 @@ type OurStoryboardsProps = {
 }
 
 export default function OurStoryboards({content}: PropsWithChildren<{ content: OurStoryboardsProps }>) {
-   const {heading, subheading, description, linkLabel} = content;
+   const {heading, subheading, secondSubheading, description, linkLabel} = content;
    return (
       <section
          className={s.wrapper}
@@ -38,7 +39,8 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
             <div className={s.topWrapper}>
                <div>
                   <p className={s.subheading}>{subheading}</p>
-                  <p className={s.heading}>{heading}</p>
+                  <p className={s.heading}>{heading.toUpperCase()}</p>
+                  <p className={s.subheading}>{secondSubheading.toUpperCase()}</p>
                </div>
             </div>
 
