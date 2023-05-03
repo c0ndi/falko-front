@@ -82,7 +82,7 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
                      disableRemotePlayback
                      src={getSimpleImageUri(video)}
                      ref={videoElement}
-                     poster={videoPoster ? getSimpleImageUri(videoPoster) : ""}
+                     poster={getSimpleImageUri(videoPoster)}
                   />
 
                   {!isPlaying ?
