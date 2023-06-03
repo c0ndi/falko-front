@@ -35,6 +35,10 @@
   }
 }
 
+.innerWrapperMobile {
+  display: none;
+}
+
 @media (max-width: 1080px) {
   .wrapper {
     height: 70vh;
@@ -76,6 +80,14 @@
         font-size: 18px;
       }
     }
+  }
+
+  .innerWrapper {
+    display: none;
+  }
+
+  .innerWrapperMobile {
+    display: block;
   }
 }
 

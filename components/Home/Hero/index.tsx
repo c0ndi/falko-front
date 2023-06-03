@@ -5,13 +5,12 @@ import Image from "next/image";
 import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
 
 type HeroProps = {
-   heading: string;
-   subheading: string;
    cover: StrapiFile;
+   coverMobile: StrapiFile;
 }
 
 export default function Hero({content}: PropsWithChildren<{ content: HeroProps }>) {
-   const {heading, subheading, cover} = content;
+   const {cover, coverMobile} = content;
    return (
       <section className={s.wrapper}>
          <div className={s.innerWrapper}>
@@ -21,11 +20,15 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
                fill
                priority
             />
+         </div>
 
-            <div>
-               {/*<p>{subheading.toUpperCase()}</p>*/}
-               {/*<h1>{heading.toUpperCase()}</h1>*/}
-            </div>
+         <div className={s.innerWrapperMobile}>
+            <Image
+               src={getSimpleImageUri(coverMobile)}
+               alt={"Mobile"}
+               fill
+               priority
+            />
          </div>
       </section>
    )
