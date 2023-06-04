@@ -46,7 +46,7 @@ export default function Home({homeData}: any) {
          <OurManga
             content={ourManga}
          />
-         <div className={"pageWrapper"}>
+         <div className={"pageWrapper"} meta-data={"t"}>
             <OurStoryboards content={ourStoryboards}/>
          </div>
          <About content={about}/>
