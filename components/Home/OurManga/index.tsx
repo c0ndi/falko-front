@@ -86,29 +86,29 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                      ))}
                   </Swiper>
 
-                  {mangas.data.length > 2 &&
-                     <>
-                        <button
-                           onClick={() => swiperInstance?.slidePrev()}
-                           className={s.btnPrev}
-                        >
-                           <Image
-                              src={ArrowBlack}
-                              alt={"arrow"}
-                           />
-                        </button>
+                  {/*{mangas.data.length > 2 &&*/}
+                  {/*   <>*/}
+                  {/*      <button*/}
+                  {/*         onClick={() => swiperInstance?.slidePrev()}*/}
+                  {/*         className={s.btnPrev}*/}
+                  {/*      >*/}
+                  {/*         <Image*/}
+                  {/*            src={ArrowBlack}*/}
+                  {/*            alt={"arrow"}*/}
+                  {/*         />*/}
+                  {/*      </button>*/}
 
-                        <button
-                           onClick={() => swiperInstance?.slideNext()}
-                           className={s.btnNext}
-                        >
-                           <Image
-                              src={ArrowBlack}
-                              alt={"arrow"}
-                           />
-                        </button>
-                     </>
-                  }
+                  {/*      <button*/}
+                  {/*         onClick={() => swiperInstance?.slideNext()}*/}
+                  {/*         className={s.btnNext}*/}
+                  {/*      >*/}
+                  {/*         <Image*/}
+                  {/*            src={ArrowBlack}*/}
+                  {/*            alt={"arrow"}*/}
+                  {/*         />*/}
+                  {/*      </button>*/}
+                  {/*   </>*/}
+                  {/*}*/}
                </div>
             </div>
          </div>
