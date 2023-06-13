@@ -1,5 +1,6 @@
 .wrapper {
   padding: 90px 0;
+  position: relative;
 }
 
 .imageWrapper {
@@ -19,33 +20,55 @@
   padding-bottom: 12px;
 }
 
+.btnNext {
+  position: absolute;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  z-index: 1;
+
+  img {
+    filter: invert(1);
+  }
+}
+
+.btnPrev {
+  position: absolute;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  transform: rotate(180deg);
+  z-index: 1;
+
+  img {
+    filter: invert(1);
+  }
+}
+
 @media(max-width: 1080px) {
   .wrapper {
-    padding: 0;
-    padding-bottom: 90px;
-  }
-  .imageWrapper {
-    height: 600px;
+    padding: 0 0 0;
+    margin-bottom: 90px;
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 419px) {
   .imageWrapper {
-    height: 450px;
+    height: 520px;
   }
-}
-
-@media(max-width: 529px) {
-  .wrapper {
-    padding-bottom: 40px;
-  }
-  .imageWrapper {
-    height: 220px;
-  }
-}
-
-@media(max-width: 439px) {
-  .imageWrapper {
-    height: 150px;
+  .btnNext, .btnPrev {
+    bottom: -45px;
   }
 }

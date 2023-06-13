@@ -20,6 +20,7 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
             fill
             draggable={false}
             priority
+            unoptimized={true}
          />
 
          <p>{subheading.toUpperCase()}</p>

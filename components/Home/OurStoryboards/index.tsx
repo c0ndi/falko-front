@@ -6,7 +6,7 @@ import 'swiper/css';
 import Link from "next/link";
 import RichText from "@/components/Shared/RichText";
 import FalkoSketchbook from "@/public/images/falko-sketchbook.png";
-import FalkoSketchbookMobile from "@/public/images/falko-sketchbook-mobile.png";
+import FalkoSketchbookMobile from "@/public/images/falko-sketchbook-mobile.webp";
 
 type Storyboard = {
    attributes: {
@@ -48,6 +48,7 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
                src={FalkoSketchbookMobile}
                alt={"FirstCover"}
                className={s.imageMobile}
+               quality={65}
             />
 
             <div className={s.textWrapper}>
@@ -67,6 +68,7 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
             src={FalkoSketchbook}
             alt={"FirstCover"}
             className={s.image}
+            quality={100}
          />
       </section>
    )

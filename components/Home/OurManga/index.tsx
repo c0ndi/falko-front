@@ -38,6 +38,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
             fill
             className={s.bgCover}
             priority
+            unoptimized={true}
          />
          <div className={s.innerWrapper}>
             <div>

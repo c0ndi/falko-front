@@ -59,6 +59,7 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
             fill
             className={s.bgCover}
             priority
+            unoptimized={true}
          />
 
          <div className={s.innerWrapper}>

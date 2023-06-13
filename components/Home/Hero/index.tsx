@@ -19,6 +19,7 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
                alt={""}
                fill
                priority
+              unoptimized={true}
             />
          </div>
 
@@ -28,6 +29,7 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
                alt={"Mobile"}
                fill
                priority
+               unoptimized={true}
             />
          </div>
       </section>

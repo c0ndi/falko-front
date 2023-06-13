@@ -43,7 +43,7 @@ export default function MangaReader({pages, title}: MangaReader) {
             width={370}
             height={490}
             className={s.bookMobile}
-            startPage={pages.data.length - 1}
+            // startPage={pages.data.length - 1}
             ref={bookMobile}
          >
             {pages.data.map((page, index) => (

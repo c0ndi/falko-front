@@ -1,6 +1,6 @@
 import s from './index.module.scss'
 import Image from "next/image";
-import FalkoRed from "@/public/images/falko-logo-red.png";
+import FalkoRed from "@/public/images/falko-logo-red.webp";
 
 type TitleSectionProps = {
    subheading: string;
