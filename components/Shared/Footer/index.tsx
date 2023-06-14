@@ -48,14 +48,14 @@ export default function Footer({content}: PropsWithChildren<{ content: FooterPro
 
          <div className={s.data}>
             <p className={s.ceoName}>
-               Błażej Zajkiewicz, &nbsp;
+               {/*Błażej Zajkiewicz, &nbsp;*/}
                <span>Falko project</span>
             </p>
 
-            <Link
-               href={`tel:${phoneNumber}`}
-               className={s.phone}
-            >Tel. {phoneNumber}</Link>
+            {/*<Link*/}
+            {/*   href={`tel:${phoneNumber}`}*/}
+            {/*   className={s.phone}*/}
+            {/*>Tel. {phoneNumber}</Link>*/}
 
             <Link href={"/policies"}>
                <p style={{fontWeight: 600}}>

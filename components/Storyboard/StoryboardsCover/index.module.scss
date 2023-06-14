@@ -57,18 +57,26 @@
   }
 }
 
+.newImageWrapper {
+  width: 100%;
+  height: 480px;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
 @media(max-width: 1080px) {
   .wrapper {
     padding: 0 0 0;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
 }
 
 @media(max-width: 419px) {
-  .imageWrapper {
-    height: 520px;
-  }
-  .btnNext, .btnPrev {
-    bottom: -45px;
+  .newImageWrapper {
+    height: 380px;
   }
 }

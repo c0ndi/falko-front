@@ -5,15 +5,16 @@ import Loading from "@/components/Shared/Loading";
 import Hero from "@/components/Storyboard/Hero";
 import Link from "next/link";
 import TitleSection from "@/components/Storyboard/TitleSection";
-import {StrapiFileArray} from "@/types/types";
+import {StrapiFile, StrapiFileArray} from "@/types/types";
 import TableOfContents from "@/components/Storyboard/TableOfContents";
-import CoversSlider from "@/components/Storyboard/CoversSlider";
+import CoversSlider from "@/components/Storyboard/StoryboardsCover";
 import Storyboards from "@/components/Storyboard/Storyboards";
 
 export type Storyboard = {
    attributes: {
       title: string;
       covers: {data: StrapiFileArray []};
+      singleCover: StrapiFile;
       slug: string;
    }
 }

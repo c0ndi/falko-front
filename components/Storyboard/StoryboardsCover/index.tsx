@@ -1,28 +1,46 @@
 import s from './index.module.scss'
-import {StrapiFileArray} from "@/types/types";
+import {StrapiFile, StrapiFileArray} from "@/types/types";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, {Autoplay} from 'swiper';
 import Image from "next/image";
 import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
 import {useState} from "react";
 import ArrowBlack from "@/public/icons/arrow-white.svg";
+import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import Link from "next/link";
 
 type CoversSlider = {
    title: string;
-   covers: { data: StrapiFileArray [] };
+   singleCover: StrapiFile;
    slug: string;
 }
 
-SwiperCore.use([Autoplay]);
-
-export default function CoversSlider({title, covers, slug}: CoversSlider) {
-   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
+export default function StoryboardCover({title, singleCover, slug}: CoversSlider) {
    return (
-      // @ts-ignore
-      <section className={s.wrapper} name={slug}>
-         <p className={s.title}>{title.toUpperCase()}</p>
-         <Swiper
+      <Link
+         href={`/storyboardy/${slug}`}
+      >
+         <section
+            className={s.wrapper}
+            // @ts-ignore
+            name={slug}
+         >
+            <p className={s.title}>{title.toUpperCase()}</p>
+
+            <div className={s.newImageWrapper}>
+               <Image
+                  src={getSimpleImageUri(singleCover)}
+                  alt={""}
+                  fill
+               />
+            </div>
+         </section>
+      </Link>
+   )
+}
+/*
+* <Swiper
             spaceBetween={8}
             slidesPerView={1}
             onSwiper={(swiper) => setSwiperInstance(swiper)}
@@ -64,6 +82,4 @@ export default function CoversSlider({title, covers, slug}: CoversSlider) {
                alt={"arrow"}
             />
          </button>
-      </section>
-   )
-}
+* */
