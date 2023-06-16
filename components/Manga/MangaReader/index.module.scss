@@ -73,10 +73,11 @@
 @media (max-width: 621px) {
   .book {
     display: none !important;
-    transform: scale(1) !important;
+    transform: scale(1);
   }
 
   .bookMobile {
     display: block !important;
+    transform: scale(1);
   }
 }
