@@ -29,6 +29,7 @@ export default function MangaReader({pages, title}: MangaReader) {
                   className={s.page}
                   key={index}
                >
+                   <div className={s.shadow}/>
                   <Image
                      src={getSimpleImageUriArray(page)}
                      alt={""}
