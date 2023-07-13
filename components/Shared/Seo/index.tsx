@@ -32,6 +32,7 @@ export default function Seo({seo}: PropsWithChildren<{ seo: Seo }>) {
    const seoStructuredData = seo?.structuredData;
    return (
       <Head>
+          <meta name="robots" content="all" />
          {seoData &&
             <>
                <title>{seoData.metaTitle}</title>
