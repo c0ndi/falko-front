@@ -1,11 +1,11 @@
 import s from './index.module.scss'
-import {PropsWithChildren, useState} from "react";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { PropsWithChildren, useState } from "react";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import Image from "next/image";
-import {StrapiFile} from "@/types/types";
+import { StrapiFile } from "@/types/types";
 import Link from "next/link";
 import ArrowBlack from '@/public/icons/arrow-black-small.svg';
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import axios from '@/config/axios';
 
 type FooterProps = {
@@ -18,14 +18,14 @@ type FooterProps = {
    logoFooter: StrapiFile;
 }
 
-export default function Footer({content}: PropsWithChildren<{ content: FooterProps }>) {
-   const {register, handleSubmit, watch, formState: {errors}, reset} = useForm<{ email: string }>();
+export default function Footer({ content }: PropsWithChildren<{ content: FooterProps }>) {
+   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<{ email: string }>();
    const [status, setStatus] = useState<"normal" | "sending" | "success" | "error">("normal");
 
    const onSubmit = async (data: { email: string }) => {
       setStatus("sending");
 
-      await axios.post('/customer-messages', {data: data}).then(() => {
+      await axios.post('/customer-messages', { data: data }).then(() => {
          setTimeout(() => {
             setStatus("success");
             reset();
@@ -36,7 +36,7 @@ export default function Footer({content}: PropsWithChildren<{ content: FooterPro
       });
    }
 
-   const {address, phoneNumber, logoFooter} = content;
+   const { address, phoneNumber, logoFooter } = content;
    return (
       <footer className={s.wrapper}>
          <Image
@@ -58,10 +58,20 @@ export default function Footer({content}: PropsWithChildren<{ content: FooterPro
             {/*>Tel. {phoneNumber}</Link>*/}
 
             <Link href={"/policies"}>
-               <p style={{fontWeight: 600}}>
+               <p style={{ fontWeight: 600 }}>
                   Terms and Conditions
                </p>
             </Link>
+
+            <div className={s.locale}>
+               <Link href="/pl-PL" locale="pl-PL">
+                  <button>PL</button>
+               </Link>
+               <button style={{ cursor: "auto" }}>/</button>
+               <Link href="/en" locale="en">
+                  <button>EN</button>
+               </Link>
+            </div>
          </div>
 
          <div className={s.newsletter}>
@@ -72,9 +82,9 @@ export default function Footer({content}: PropsWithChildren<{ content: FooterPro
             >
                <input
                   type="text"
-                  style={{color: errors.email ? "red" : "#333"}}
+                  style={{ color: errors.email ? "red" : "#333" }}
                   placeholder="Enter your email"
-                  {...register("email", {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/})}
+                  {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
                />
 
                <button

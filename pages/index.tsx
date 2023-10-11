@@ -3,30 +3,33 @@ import Collection from "@/components/Home/Collection";
 import OurManga from "@/components/Home/OurManga";
 import OurStoryboards from "@/components/Home/OurStoryboards";
 import About from "@/components/Home/About";
-import {getData} from "@/utils/getData";
-import {useQuery} from "@tanstack/react-query";
+import { getData } from "@/utils/getData";
+import { useQuery } from "@tanstack/react-query";
 import ErrorComponent from "@/components/Shared/ErrorComponent";
 import Loading from "@/components/Shared/Loading";
 import Seo from "@/components/Shared/Seo";
+import { useRouter } from "next/router";
 
-export async function getServerSideProps({req, res}: {req: any, res: any}) {
+export async function getServerSideProps({ req, res }: { req: any, res: any }) {
    res.setHeader(
       'Cache-Control',
       'public, s-maxage=10, stale-while-revalidate=59'
    )
-   const homeData = await getData("/home")
+   const homeData = await getData("/home", req.locale)
    return { props: { homeData } }
 }
 
-export default function Home({homeData}: any) {
-   const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData("/home"), initialData: homeData})
+export default function Home({ homeData }: any) {
+   const router = useRouter();
+
+   const { data, isLoading, isError } = useQuery({ queryKey: ['home'], queryFn: () => getData("/home", router.locale), initialData: homeData })
 
    if (isLoading) {
-      return <Loading/>
+      return <Loading />
    }
 
    if (isError) {
-      return <ErrorComponent/>
+      return <ErrorComponent />
    }
 
    const {
@@ -40,16 +43,16 @@ export default function Home({homeData}: any) {
 
    return (
       <>
-         <Seo seo={seo}/>
-         <Hero content={hero}/>
-         <Collection content={collection}/>
+         <Seo seo={seo} />
+         <Hero content={hero} />
+         <Collection content={collection} />
          <OurManga
             content={ourManga}
          />
          <div className={"pageWrapper"} meta-data={"t"}>
-            <OurStoryboards content={ourStoryboards}/>
+            <OurStoryboards content={ourStoryboards} />
          </div>
-         <About content={about}/>
+         <About content={about} />
       </>
    )
 }

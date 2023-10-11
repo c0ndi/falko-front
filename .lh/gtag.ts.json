@@ -1,0 +1,18 @@
+{
+    "sourceFile": "gtag.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1691698315932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1691698315932,
+            "name": "Commit-0",
+            "content": "export const GA_TRACKING_ID = \"G-9YWKG3KQE9\" //replace it with your measurement id\n\n// https://developers.google.com/analytics/devguides/collection/gtagjs/pages\nexport const pageview = (url: string) => {\n    // @ts-ignore\n    window.gtag(\"config\", GA_TRACKING_ID, {\n        page_path: url,\n    })\n}\n\n// https://developers.google.com/analytics/devguides/collection/gtagjs/events\nexport const event = ({action, category, label, value }: {\n    action: string,\n    category: string,\n    label: string,\n    value: number\n}) => {\n    // @ts-ignore\n    window.gtag(\"event\", action, {\n        event_category: category,\n        event_label: label,\n        value: value,\n    })\n}"
+        }
+    ]
+}

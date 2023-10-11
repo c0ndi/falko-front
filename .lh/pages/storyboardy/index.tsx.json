@@ -1,0 +1,22 @@
+{
+    "sourceFile": "pages/storyboardy/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1697050983418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697052028123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,11 @@\n       queryKey: [\"storyboards-page\"],\n       queryFn: () => getData(`/storyboards-page`, router.locale)\n    })\n \n+   console.log(data);\n+   \n+\n    if (isLoading) {\n       return <Loading />\n    }\n \n"
+                }
+            ],
+            "date": 1697050983418,
+            "name": "Commit-0",
+            "content": "import { useQuery } from '@tanstack/react-query'\nimport { getData } from \"@/utils/getData\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport Loading from \"@/components/Shared/Loading\";\nimport Hero from \"@/components/Storyboard/Hero\";\nimport Link from \"next/link\";\nimport TitleSection from \"@/components/Storyboard/TitleSection\";\nimport { StrapiFile, StrapiFileArray } from \"@/types/types\";\nimport TableOfContents from \"@/components/Storyboard/TableOfContents\";\nimport CoversSlider from \"@/components/Storyboard/StoryboardsCover\";\nimport Storyboards from \"@/components/Storyboard/Storyboards\";\nimport { useRouter } from 'next/router';\n\nexport type Storyboard = {\n   attributes: {\n      title: string;\n      covers: { data: StrapiFileArray[] };\n      singleCover: StrapiFile;\n      slug: string;\n   }\n}\n\nexport default function Home() {\n   const router = useRouter();\n\n   const { data, isLoading, isError } = useQuery({\n      queryKey: [\"storyboards-page\"],\n      queryFn: () => getData(`/storyboards-page`, router.locale)\n   })\n\n   if (isLoading) {\n      return <Loading />\n   }\n\n   if (isError) {\n      return <ErrorComponent redirect />\n   }\n\n   const { title, subheading, cover, storyboards } = data.data.attributes;\n\n   return (\n      <>\n         <Hero content={{ title, subheading, cover }} />\n         <main className={\"pageWrapper\"}>\n            <TitleSection content={{ subheading: \"Spis treści: \" }} />\n\n            <TableOfContents content={storyboards} />\n            <Storyboards storyboards={storyboards} />\n         </main>\n      </>\n   )\n}\n"
+        }
+    ]
+}

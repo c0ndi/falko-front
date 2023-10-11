@@ -1,0 +1,26 @@
+{
+    "sourceFile": "pages/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1697049945139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697049955158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import { useQuery } from \"@tanstack/react-query\";\n import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n import Loading from \"@/components/Shared/Loading\";\n import Seo from \"@/components/Shared/Seo\";\n+import { useRouter } from \"next/router\";\n \n export async function getServerSideProps({ req, res }: { req: any, res: any }) {\n    res.setHeader(\n       'Cache-Control',\n@@ -18,9 +19,11 @@\n    return { props: { homeData } }\n }\n \n export default function Home({ homeData }: any) {\n-   const router = \n+   const router = useRouter();\n+   console.log(router);\n+\n    const { data, isLoading, isError } = useQuery({ queryKey: ['home'], queryFn: () => getData(\"/home\"), initialData: homeData })\n \n    if (isLoading) {\n       return <Loading />\n"
+                },
+                {
+                    "date": 1697050235635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n export default function Home({ homeData }: any) {\n    const router = useRouter();\n    console.log(router);\n \n-   const { data, isLoading, isError } = useQuery({ queryKey: ['home'], queryFn: () => getData(\"/home\"), initialData: homeData })\n+   const { data, isLoading, isError } = useQuery({ queryKey: ['home'], queryFn: () => getData(\"/home\", router.locale), initialData: homeData })\n \n    if (isLoading) {\n       return <Loading />\n    }\n"
+                }
+            ],
+            "date": 1697049945139,
+            "name": "Commit-0",
+            "content": "import Hero from \"@/components/Home/Hero\";\nimport Collection from \"@/components/Home/Collection\";\nimport OurManga from \"@/components/Home/OurManga\";\nimport OurStoryboards from \"@/components/Home/OurStoryboards\";\nimport About from \"@/components/Home/About\";\nimport {getData} from \"@/utils/getData\";\nimport {useQuery} from \"@tanstack/react-query\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport Loading from \"@/components/Shared/Loading\";\nimport Seo from \"@/components/Shared/Seo\";\n\nexport async function getServerSideProps({req, res}: {req: any, res: any}) {\n   res.setHeader(\n      'Cache-Control',\n      'public, s-maxage=10, stale-while-revalidate=59'\n   )\n   const homeData = await getData(\"/home\")\n   return { props: { homeData } }\n}\n\nexport default function Home({homeData}: any) {\n   const router = \n   const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData(\"/home\"), initialData: homeData})\n\n   if (isLoading) {\n      return <Loading/>\n   }\n\n   if (isError) {\n      return <ErrorComponent/>\n   }\n\n   const {\n      hero,\n      collection,\n      ourManga,\n      ourStoryboards,\n      about,\n      seo\n   } = data.data.attributes;\n\n   return (\n      <>\n         {/* <Seo seo={seo}/>\n         <Hero content={hero}/>\n         <Collection content={collection}/>\n         <OurManga\n            content={ourManga}\n         />\n         <div className={\"pageWrapper\"} meta-data={\"t\"}>\n            <OurStoryboards content={ourStoryboards}/>\n         </div>\n         <About content={about}/> */}\n      </>\n   )\n}\n"
+        }
+    ]
+}

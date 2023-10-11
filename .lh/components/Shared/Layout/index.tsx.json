@@ -1,0 +1,18 @@
+{
+    "sourceFile": "components/Shared/Layout/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1697052823846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1697052823846,
+            "name": "Commit-0",
+            "content": "import {useQuery} from \"@tanstack/react-query\";\nimport {getData} from \"@/utils/getData\";\nimport Loading from \"@/components/Shared/Loading\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport {useLoading} from \"@/hooks/useLoading\";\nimport Navbar from \"@/components/Shared/Navbar\";\nimport {createContext, ReactNode} from \"react\";\nimport Footer from \"@/components/Shared/Footer\";\nimport Head from \"next/head\";\nimport { useRouter } from \"next/router\";\n\nexport const DataContext = createContext<{ data: any }>({data: {}});\n\nexport default function Layout({children}: { children: ReactNode }) {\n    const router = useRouter();\n    const {data, isLoading, isError} = useQuery({queryKey: ['shared'], queryFn: () => getData(\"/shared\", router.locale)})\n\n    const loading = useLoading(isLoading);\n\n    if (loading) {\n        return <Loading/>\n    }\n\n    if (isError) {\n        return <ErrorComponent/>\n    }\n\n    const {\n        nav,\n        facebookLink,\n        instagramLink,\n        youtubeLink,\n        tiktokLink,\n        phoneNumber,\n        nipNumber,\n        address,\n        logoFooter,\n    } = data.data.attributes;\n\n    const footerContent = {\n        facebookLink,\n        instagramLink,\n        address,\n        phoneNumber,\n        nipNumber,\n        logoFooter,\n        youtubeLink\n    }\n    return (\n        <>\n            <Head>\n                <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\"/>\n                <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\"/>\n                <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\"/>\n                <link rel=\"manifest\" href=\"/site.webmanifest\"/>\n                <link rel=\"mask-icon\" href=\"/safari-pinned-tab.svg\" color=\"#5bbad5\"/>\n                <meta name=\"msapplication-TileColor\" content=\"#da532c\"/>\n                <meta name=\"theme-color\" content=\"#ffffff\"/>\n            </Head>\n            <Navbar content={{nav, facebookLink, youtubeLink, instagramLink, tiktokLink}}/>\n\n            <DataContext.Provider value={{data: data.data.attributes}}>\n                {children}\n            </DataContext.Provider>\n\n            <Footer content={footerContent}/>\n        </>\n    )\n}"
+        }
+    ]
+}

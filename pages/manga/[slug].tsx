@@ -1,11 +1,11 @@
-import {getData} from "@/utils/getData";
-import {useQuery} from "@tanstack/react-query";
+import { getData } from "@/utils/getData";
+import { useQuery } from "@tanstack/react-query";
 import ErrorComponent from "@/components/Shared/ErrorComponent";
 import Loading from "@/components/Shared/Loading";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import MangaReader from "@/components/Manga/MangaReader";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import ArrowBackIcon from "@/public/icons/arrow-back.svg";
 import Link from "next/link";
 import Seo from "@/components/Shared/Seo";
@@ -13,22 +13,22 @@ import Seo from "@/components/Shared/Seo";
 export default function Home() {
    const router = useRouter();
 
-   const {slug} = router.query;
-   const {data, isLoading, isError} = useQuery({queryKey: [slug], queryFn: () => getData(`/mangas`, slug)})
+   const { slug } = router.query;
+   const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/mangas`, router.locale, slug) })
 
    if (isLoading) {
-      return <Loading/>
+      return <Loading />
    }
 
    if (isError || !data.data.length) {
-      return <ErrorComponent redirect/>
+      return <ErrorComponent redirect />
    }
 
-   const {pages, title, backgroundCover, seo} = data.data[0].attributes;
+   const { pages, title, backgroundCover, seo } = data.data[0].attributes;
 
    return (
       <>
-         <Seo seo={seo}/>
+         <Seo seo={seo} />
          <main className={"mangaWrapper"}>
             <div className={"backWrapper"}>
                <Link

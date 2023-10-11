@@ -9,6 +9,7 @@
 
 .newsletter {
   margin-left: auto;
+  position: relative;
   width: 300px;
 
   p {
@@ -17,6 +18,22 @@
     margin-bottom: 12px;
     font-weight: 600;
   }
+}
+
+.locale {
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #000;
+    margin-right: 16px;
+  }
+
+  position: relative;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .input {
@@ -79,7 +96,9 @@
   border-right: 1px solid #666;
 }
 
-.sending, .success, .error{
+.sending,
+.success,
+.error {
   padding-top: 6px;
   padding-left: 24px;
   font-size: 13px !important;

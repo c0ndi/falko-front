@@ -1,0 +1,18 @@
+{
+    "sourceFile": "pages/storyboardy/[slug].tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1697050968188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1697050968188,
+            "name": "Commit-0",
+            "content": "import {getData} from \"@/utils/getData\";\nimport {useQuery} from \"@tanstack/react-query\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport Loading from \"@/components/Shared/Loading\";\nimport {useRouter} from \"next/router\";\nimport Image from \"next/image\";\nimport MangaReader from \"@/components/Manga/MangaReader\";\nimport {getSimpleImageUri} from \"@/utils/getSimpleImageUri\";\nimport ArrowBackIcon from \"@/public/icons/arrow-back.svg\";\nimport Link from \"next/link\";\nimport Seo from \"@/components/Shared/Seo\";\n\nexport default function Home() {\n   const router = useRouter();\n\n   const {slug} = router.query;\n   const {data, isLoading, isError} = useQuery({queryKey: [slug], queryFn: () => getData(`/storyboards`,router.locale, slug)})\n\n   if (isLoading) {\n      return <Loading/>\n   }\n\n   if (isError || !data.data.length) {\n      return <ErrorComponent redirect/>\n   }\n\n   const {covers, title, backgroundCover, seo} = data.data[0].attributes;\n\n   return (\n      <>\n         <Seo seo={seo}/>\n         <main className={\"mangaWrapper\"}>\n            <div className={\"backWrapper\"}>\n               <Link\n                  href={\"/\"}\n                  className={\"back\"}\n               >\n                  <Image\n                     src={ArrowBackIcon}\n                     alt={\"\"}\n                     width={40}\n                     height={16}\n                  />\n\n                  <p>Powrót</p>\n               </Link>\n\n               {/*<h1>{title.toUpperCase()}</h1>*/}\n            </div>\n            <Image\n               src={getSimpleImageUri(backgroundCover)}\n               alt={title}\n               fill\n            />\n\n            <MangaReader\n               pages={covers}\n               title={title}\n            />\n         </main>\n      </>\n   )\n}\n"
+        }
+    ]
+}
