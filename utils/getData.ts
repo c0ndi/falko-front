@@ -6,8 +6,8 @@ export async function getData(
   slug?: string | string[]
 ) {
   const query = slug
-    ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale ?? "pl-PL"}`
-    : `?populate=deep&locale=${locale ?? "pl-PL"}`;
+    ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale ?? "pl"}`
+    : `?populate=deep&locale=${locale ?? "pl"}`;
   const res = await axios.get(`${url + query}`);
 
   return res.data;

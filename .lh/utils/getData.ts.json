@@ -1,26 +1,26 @@
 {
-    "sourceFile": "utils/getData.ts",
-    "activeCommit": 0,
-    "commits": [
+  "sourceFile": "utils/getData.ts",
+  "activeCommit": 0,
+  "commits": [
+    {
+      "activePatchIndex": 2,
+      "patches": [
         {
-            "activePatchIndex": 2,
-            "patches": [
-                {
-                    "date": 1697050228015,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n"
-                },
-                {
-                    "date": 1697050256362,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import axios from \"@/config/axios\";\n \n export async function getData(\n   url: string,\n-  locale: string,\n+  locale: string | undefined,\n   slug?: string | string[]\n ) {\n   const query = slug\n     ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale}`\n"
-                },
-                {
-                    "date": 1697050298082,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   locale: string | undefined,\n   slug?: string | string[]\n ) {\n   const query = slug\n-    ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale ?? \"pl\"}`\n+    ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale ?? \"pl-PL\"}`\n     : \"?populate=deep\";\n   const res = await axios.get(`${url + query}`);\n \n   return res.data;\n"
-                }
-            ],
-            "date": 1697050228015,
-            "name": "Commit-0",
-            "content": "import axios from '@/config/axios';\n\nexport async function getData(url: string, locale: string, slug?: string | string[]) {\n   const query = slug ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale}` : '?populate=deep';\n   const res = await axios.get(`${url + query}`)\n\n   return res.data;\n}"
+          "date": 1697050228015,
+          "content": "Index: \n===================================================================\n--- \n+++ \n"
+        },
+        {
+          "date": 1697050256362,
+          "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import axios from \"@/config/axios\";\n \n export async function getData(\n   url: string,\n-  locale: string,\n+  locale: string | undefined,\n   slug?: string | string[]\n ) {\n   const query = slug\n     ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale}`\n"
+        },
+        {
+          "date": 1697050298082,
+          "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   locale: string | undefined,\n   slug?: string | string[]\n ) {\n   const query = slug\n-    ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale ?? \"pl\"}`\n+    ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale ?? \"pl\"}`\n     : \"?populate=deep\";\n   const res = await axios.get(`${url + query}`);\n \n   return res.data;\n"
         }
-    ]
+      ],
+      "date": 1697050228015,
+      "name": "Commit-0",
+      "content": "import axios from '@/config/axios';\n\nexport async function getData(url: string, locale: string, slug?: string | string[]) {\n   const query = slug ? `?&filters[slug][$eq]=${slug}&populate=deep&locale=${locale}` : '?populate=deep';\n   const res = await axios.get(`${url + query}`)\n\n   return res.data;\n}"
+    }
+  ]
 }

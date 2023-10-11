@@ -64,11 +64,11 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
             </Link>
 
             <div className={s.locale}>
-               {/* <Link href="/pl-PL" locale="pl-PL"> */}
+               {/* <Link href="/pl" locale="pl"> */}
                <button onClick={() => {
-                  window.location.href = "/pl-PL"
+                  window.location.href = "/pl"
 
-                  if (window.location.pathname === "/pl-PL") window.location.reload()
+                  if (window.location.pathname === "/pl") window.location.reload()
                }}>PL</button>
                {/* </Link> */}
                <button style={{ cursor: "auto" }}>/</button>

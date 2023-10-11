@@ -5,8 +5,8 @@ const nextConfig = {
     domains: ["localhost", "46.101.147.9", "strapi.falkoproject.com"],
   },
   i18n: {
-    locales: ["en", "pl-PL"],
-    defaultLocale: "pl-PL",
+    locales: ["en", "pl"],
+    defaultLocale: "pl",
   },
 };
 
