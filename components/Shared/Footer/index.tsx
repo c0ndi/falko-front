@@ -64,13 +64,21 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
             </Link>
 
             <div className={s.locale}>
-               <Link href="/pl-PL" locale="pl-PL">
-                  <button>PL</button>
-               </Link>
+               {/* <Link href="/pl-PL" locale="pl-PL"> */}
+               <button onClick={() => {
+                  window.location.href = "/pl-PL"
+
+                  if (window.location.pathname === "/pl-PL") window.location.reload()
+               }}>PL</button>
+               {/* </Link> */}
                <button style={{ cursor: "auto" }}>/</button>
-               <Link href="/en" locale="en">
-                  <button>EN</button>
-               </Link>
+               {/* <Link href="/en" locale="en"> */}
+               <button onClick={() => {
+                  window.location.href = "/en"
+
+                  if (window.location.pathname === "/en") window.location.reload()
+               }}>EN</button>
+               {/* </Link> */}
             </div>
          </div>
 
