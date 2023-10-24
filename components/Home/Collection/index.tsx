@@ -7,6 +7,7 @@ import Image from "next/image";
 import StoreGraphic from '@/public/images/store-desktop.png';
 import StoreGraphicMobile from '@/public/images/store-mobile.png';
 import FalkoW from '@/public/images/falkow.svg';
+import Gif from '@/public/images/walking.gif';
 
 type CollectionProps = {
    heading: string;
@@ -59,10 +60,11 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
 
          <div className={s.itemsWrapper}>
             <Image
-               src={FalkoW}
+               src={Gif}
                alt={""}
                className={s.japaneseText}
                priority
+               height={150}
             />
 
 

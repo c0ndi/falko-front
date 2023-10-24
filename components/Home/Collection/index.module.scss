@@ -103,6 +103,10 @@
   .itemsWrapper {
     grid-template-columns: repeat(3, 250px);
   }
+
+  .heading {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 829px) {
@@ -116,7 +120,9 @@
   }
 
   .japaneseText {
-    display: none;
+    height: 64px;
+    width: 64px;
+    transform: translateY(64px);
   }
 
   .storeGraphic {
