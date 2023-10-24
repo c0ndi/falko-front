@@ -32,6 +32,7 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
          className={s.wrapper}
          // @ts-ignore
          name={"collection"}
+         style={{ marginTop: "16px" }}
       >
          {/*<div>*/}
          {/*   <p className={s.subheading}>{subheading.toUpperCase()}</p>*/}
