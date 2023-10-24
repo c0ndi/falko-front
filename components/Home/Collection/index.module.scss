@@ -51,7 +51,7 @@
   position: absolute;
   right: 0px;
   z-index: -1;
-  top: -175px;
+  top: -123px;
 }
 
 .heading {
@@ -82,10 +82,6 @@
     padding: 24px 12px 60px;
   }
 
-  .japaneseText {
-    top: -130px;
-  }
-
   .bottomWrapper {
     flex-direction: column;
     align-items: flex-start;
@@ -112,6 +108,10 @@
 @media (max-width: 829px) {
   .wrapper {
     padding: 24px 12px 60px;
+  }
+  .japaneseText {
+    top: -105px;
+    left: 170px;
   }
 
   .itemsWrapper {
