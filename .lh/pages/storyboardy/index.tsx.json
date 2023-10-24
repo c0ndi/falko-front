@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1697050983418,
@@ -12,6 +12,10 @@
                 {
                     "date": 1697052028123,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,11 @@\n       queryKey: [\"storyboards-page\"],\n       queryFn: () => getData(`/storyboards-page`, router.locale)\n    })\n \n+   console.log(data);\n+   \n+\n    if (isLoading) {\n       return <Loading />\n    }\n \n"
+                },
+                {
+                    "date": 1698142095223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n    return (\n       <>\n          <Hero content={{ title, subheading, cover }} />\n          <main className={\"pageWrapper\"}>\n-            <TitleSection content={{ subheading: \"Spis treści: \" }} />\n+            <TitleSection content={{ subheading: router.locale == \"en\" ? \"CONTENTS:\" : \"SPIS TRESCI:\" }} />\n \n             <TableOfContents content={storyboards} />\n             <Storyboards storyboards={storyboards} />\n          </main>\n"
                 }
             ],
             "date": 1697050983418,

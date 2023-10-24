@@ -45,7 +45,7 @@ export default function Home() {
       <>
          <Hero content={{ title, subheading, cover }} />
          <main className={"pageWrapper"}>
-            <TitleSection content={{ subheading: "Spis treści: " }} />
+            <TitleSection content={{ subheading: router.locale == "en" ? "CONTENTS:" : "SPIS TRESCI:" }} />
 
             <TableOfContents content={storyboards} />
             <Storyboards storyboards={storyboards} />

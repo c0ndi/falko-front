@@ -1,11 +1,11 @@
 import s from './index.module.scss'
-import {PropsWithChildren} from "react";
+import { PropsWithChildren } from "react";
 import Link from "next/link";
-import SingleItem, {SingleItemT} from "@/components/Home/Collection/SingleItem";
+import SingleItem, { SingleItemT } from "@/components/Home/Collection/SingleItem";
 import CollectionJapaneseText from '@/public/images/collection-japanase.png'
 import Image from "next/image";
-import StoreGraphic from '@/public/images/visit_store_svg.svg';
-import StoreGraphicMobile from '@/public/images/visit_store_svg_mobile.svg';
+import StoreGraphic from '@/public/images/store-desktop.png';
+import StoreGraphicMobile from '@/public/images/store-mobile.png';
 import FalkoW from '@/public/images/falkow.svg';
 
 type CollectionProps = {
@@ -18,7 +18,7 @@ type CollectionProps = {
    example_products: { data: { attributes: SingleItemT }[] }
 }
 
-export default function Collection({content}: PropsWithChildren<{ content: CollectionProps }>) {
+export default function Collection({ content }: PropsWithChildren<{ content: CollectionProps }>) {
    const {
       heading,
       subheading,
@@ -41,7 +41,7 @@ export default function Collection({content}: PropsWithChildren<{ content: Colle
             <Image
                src={StoreGraphic}
                alt={"StoreGraphic"}
-               style={{width: "100%", marginBottom:"60px"}}
+               style={{ width: "100%", marginBottom: "60px", objectFit: "contain" }}
                className={s.storeGraphic}
             />
          </Link>
@@ -50,7 +50,7 @@ export default function Collection({content}: PropsWithChildren<{ content: Colle
             <Image
                src={StoreGraphicMobile}
                alt={"StoreGraphicMobile"}
-               style={{width: "100%", marginBottom:"60px"}}
+               style={{ width: "100%", marginBottom: "60px" }}
                className={s.storeGraphicMobile}
             />
          </Link>

@@ -75,14 +75,6 @@
   .itemsWrapper {
     grid-template-columns: repeat(3, 300px);
   }
-
-  .storeGraphic {
-    display: none;
-  }
-
-  .storeGraphicMobile {
-    display: block;
-  }
 }
 
 @media (max-width: 1080px) {
@@ -125,6 +117,16 @@
 
   .japaneseText {
     display: none;
+  }
+
+  .storeGraphic {
+    display: none;
+  }
+
+  .storeGraphicMobile {
+    display: block;
+    height: auto;
+    width: 100%;
   }
 }
 

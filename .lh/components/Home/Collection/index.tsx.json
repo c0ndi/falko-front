@@ -1,0 +1,26 @@
+{
+    "sourceFile": "components/Home/Collection/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1698129901232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698130409193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n          <Link href={storeButtonLink} target={\"_blank\"}>\n             <Image\n                src={StoreGraphicMobile}\n                alt={\"StoreGraphicMobile\"}\n-               style={{ width: \"100%\", marginBottom: \"60px\" }}\n+               style={{ width: \"100%\", marginBottom: \"60px\", objectFit: \"contain\" }}\n                className={s.storeGraphicMobile}\n             />\n          </Link>\n \n"
+                },
+                {
+                    "date": 1698130422238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n          <Link href={storeButtonLink} target={\"_blank\"}>\n             <Image\n                src={StoreGraphicMobile}\n                alt={\"StoreGraphicMobile\"}\n-               style={{ width: \"100%\", marginBottom: \"60px\", objectFit: \"contain\" }}\n+               style={{ width: \"100%\", marginBottom: \"60px\", }}\n                className={s.storeGraphicMobile}\n             />\n          </Link>\n \n"
+                }
+            ],
+            "date": 1698129901232,
+            "name": "Commit-0",
+            "content": "import s from './index.module.scss'\nimport {PropsWithChildren} from \"react\";\nimport Link from \"next/link\";\nimport SingleItem, {SingleItemT} from \"@/components/Home/Collection/SingleItem\";\nimport CollectionJapaneseText from '@/public/images/collection-japanase.png'\nimport Image from \"next/image\";\nimport StoreGraphic from '@/public/images/store-desktop.png';\nimport StoreGraphicMobile from '@/public/images/store-mobile.png';\nimport FalkoW from '@/public/images/falkow.svg';\n\ntype CollectionProps = {\n   heading: string;\n   subheading: string;\n   descriptionHeading: string;\n   descriptionText: string;\n   storeButtonLabel: string;\n   storeButtonLink: string;\n   example_products: { data: { attributes: SingleItemT }[] }\n}\n\nexport default function Collection({content}: PropsWithChildren<{ content: CollectionProps }>) {\n   const {\n      heading,\n      subheading,\n      storeButtonLabel,\n      storeButtonLink,\n      example_products\n   } = content;\n   return (\n      <section\n         className={s.wrapper}\n         // @ts-ignore\n         name={\"collection\"}\n      >\n         {/*<div>*/}\n         {/*   <p className={s.subheading}>{subheading.toUpperCase()}</p>*/}\n         {/*   <p className={s.heading}>{heading.toUpperCase()}</p>*/}\n         {/*</div>*/}\n\n         <Link href={storeButtonLink} target={\"_blank\"}>\n            <Image\n               src={StoreGraphic}\n               alt={\"StoreGraphic\"}\n               style={{width: \"100%\", marginBottom:\"60px\"}}\n               className={s.storeGraphic}\n            />\n         </Link>\n\n         <Link href={storeButtonLink} target={\"_blank\"}>\n            <Image\n               src={StoreGraphicMobile}\n               alt={\"StoreGraphicMobile\"}\n               style={{width: \"100%\", marginBottom:\"60px\"}}\n               className={s.storeGraphicMobile}\n            />\n         </Link>\n\n         <p className={s.heading}>LATEST STUFF</p>\n\n         <div className={s.itemsWrapper}>\n            <Image\n               src={FalkoW}\n               alt={\"\"}\n               className={s.japaneseText}\n               priority\n            />\n\n\n            {example_products.data.map((item, index) => (\n               <SingleItem\n                  content={item.attributes}\n                  key={index}\n               />\n            ))}\n         </div>\n\n         <div className={s.bottomWrapper}>\n            {/*<div className={s.description}>*/}\n            {/*   <p className={s.descriptionHeading}>{descriptionHeading}</p>*/}\n            {/*   <p className={s.descB}>{descriptionText}</p>*/}\n            {/*</div>*/}\n\n            {/*<Link*/}\n            {/*   href={storeButtonLink}*/}\n            {/*   target={\"_blank\"}*/}\n            {/*>*/}\n            {/*   <p className={s.storeLink}>{storeButtonLabel.toUpperCase()}</p>*/}\n            {/*</Link>*/}\n         </div>\n      </section>\n   )\n}"
+        }
+    ]
+}
