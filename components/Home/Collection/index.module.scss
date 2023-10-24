@@ -51,7 +51,7 @@
   position: absolute;
   right: 0px;
   z-index: -1;
-  top: -123px;
+  top: -218px;
 }
 
 .heading {
@@ -109,10 +109,6 @@
   .wrapper {
     padding: 24px 12px 60px;
   }
-  .japaneseText {
-    top: -105px;
-    left: 170px;
-  }
 
   .itemsWrapper {
     grid-template-columns: repeat(1, 1fr);
@@ -120,9 +116,10 @@
   }
 
   .japaneseText {
-    height: 64px;
-    width: 64px;
-    transform: translateY(64px);
+    height: 96px;
+    width: 96px;
+    left: 140px;
+    top: -72px;
   }
 
   .storeGraphic {
@@ -143,5 +140,13 @@
 
   .itemsWrapper {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .japaneseText {
+    height: 138px;
+    width: 138px;
+    top: -113px;
+    left: auto;
+    right: -16px;
   }
 }

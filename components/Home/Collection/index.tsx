@@ -65,7 +65,7 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
                alt={""}
                className={s.japaneseText}
                priority
-               height={150}
+               height={250}
             />
 
 

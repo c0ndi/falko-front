@@ -1,21 +1,21 @@
 // @ts-nocheck
 import s from './index.module.scss'
-import {PropsWithChildren, useEffect, useState} from "react";
-import {StrapiFile} from "@/types/types";
+import { PropsWithChildren, useEffect, useState } from "react";
+import { StrapiFile } from "@/types/types";
 import Image from "next/image";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import Link from "next/link";
 import YoutubeIcon from "@/public/icons/youtube.svg";
 import InstagramIcon from "@/public/icons/instagram.svg";
 import FacebookIcon from "@/public/icons/facebook.svg";
 import TiktokIcon from "@/public/icons/tiktok.svg";
 
-import {Turn as Hamburger} from 'hamburger-react'
+import { Turn as Hamburger } from 'hamburger-react'
 
 type NavProps = {
    nav: {
       logoNav: StrapiFile;
-      navLinks: { linkUrl: string, linkLabel: string } [];
+      navLinks: { linkUrl: string, linkLabel: string }[];
    }
    facebookLink: string;
    instagramLink: string;
@@ -23,11 +23,11 @@ type NavProps = {
    tiktokLink: string;
 }
 
-export default function Navbar({content}: PropsWithChildren<{ content: NavProps }>) {
+export default function Navbar({ content }: PropsWithChildren<{ content: NavProps }>) {
    const [isOpen, setOpen] = useState(false)
 
-   const {logoNav, navLinks} = content.nav;
-   const {facebookLink, instagramLink, youtubeLink, tiktokLink} = content;
+   const { logoNav, navLinks } = content.nav;
+   const { facebookLink, instagramLink, youtubeLink, tiktokLink } = content;
 
    const [scrollTop, setScrollTop] = useState(0);
 
@@ -43,7 +43,7 @@ export default function Navbar({content}: PropsWithChildren<{ content: NavProps 
       if (window.innerWidth <= 629) {
          if (scrollTop > 0 || isOpen) {
             document.querySelector('nav').style.position = "fixed";
-            document.querySelector('nav').style.background = "#FFF6E1";
+            document.querySelector('nav').style.background = "#faf6eb";
             document.querySelector('nav > div').style.filter = "invert(1)";
             document.querySelector('nav').style.padding = "3px 12px";
          } else {
@@ -58,7 +58,7 @@ export default function Navbar({content}: PropsWithChildren<{ content: NavProps 
    return (
       <nav
          className={s.wrapper}
-         style={{transition: "0.3s"}}
+         style={{ transition: "0.3s" }}
       >
          <div className={s.innerWrapper}>
 
