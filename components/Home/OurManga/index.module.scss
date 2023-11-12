@@ -82,6 +82,7 @@
   font-weight: 200;
   margin-top: 24px;
   color: #fff;
+  transform: translateY(8px);
 
   span {
     text-decoration: underline;
@@ -120,6 +121,7 @@
 @media (max-width: 429px) {
   .drawnBy {
     font-size: 16px;
+    transform: translateY(16px);
   }
   .mangaWrapper {
     img {
