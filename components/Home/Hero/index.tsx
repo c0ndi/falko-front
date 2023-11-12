@@ -1,16 +1,16 @@
 import s from './index.module.scss'
-import {StrapiFile} from "@/types/types";
-import {PropsWithChildren} from "react";
+import { StrapiFile } from "@/types/types";
+import { PropsWithChildren } from "react";
 import Image from "next/image";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 
 type HeroProps = {
    cover: StrapiFile;
    coverMobile: StrapiFile;
 }
 
-export default function Hero({content}: PropsWithChildren<{ content: HeroProps }>) {
-   const {cover, coverMobile} = content;
+export default function Hero({ content }: PropsWithChildren<{ content: HeroProps }>) {
+   const { cover, coverMobile } = content;
    return (
       <section className={s.wrapper}>
          <div className={s.innerWrapper}>
@@ -19,7 +19,8 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
                alt={""}
                fill
                priority
-              unoptimized={true}
+               quality={100}
+            //   unoptimized={true}
             />
          </div>
 
@@ -29,7 +30,8 @@ export default function Hero({content}: PropsWithChildren<{ content: HeroProps }
                alt={"Mobile"}
                fill
                priority
-               unoptimized={true}
+               quality={100}
+            // unoptimized={true}
             />
          </div>
       </section>

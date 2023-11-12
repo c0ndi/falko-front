@@ -71,7 +71,7 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
                   if (window.location.pathname === "/pl") window.location.reload()
                }}>PL</button>
                {/* </Link> */}
-               <button style={{ cursor: "auto" }}>/</button>
+               <button style={{ cursor: "auto" }}>|</button>
                {/* <Link href="/en" locale="en"> */}
                <button onClick={() => {
                   window.location.href = "/en"

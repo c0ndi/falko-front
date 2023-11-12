@@ -2,12 +2,13 @@ import s from './index.module.scss'
 import { PropsWithChildren } from "react";
 import Link from "next/link";
 import SingleItem, { SingleItemT } from "@/components/Home/Collection/SingleItem";
-import CollectionJapaneseText from '@/public/images/collection-japanase.png'
 import Image from "next/image";
-import StoreGraphic from '@/public/images/store-desktop.png';
-import StoreGraphicMobile from '@/public/images/store-mobile.png';
-import FalkoW from '@/public/images/falkow.svg';
+import StoreGraphicEn from '@/public/images/store-desktop-en.png';
+import StoreGraphicPl from '@/public/images/store-desktop-pl.png';
+import StoreGraphicMobileEn from '@/public/images/store-mobile-en.png';
+import StoreGraphicMobilePl from '@/public/images/store-mobile-pl.png';
 import Gif from '@/public/images/walking.gif';
+import { useRouter } from 'next/router';
 
 type CollectionProps = {
    heading: string;
@@ -27,6 +28,9 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
       storeButtonLink,
       example_products
    } = content;
+
+   const router = useRouter();
+
    return (
       <section
          className={s.wrapper}
@@ -41,7 +45,7 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
 
          <Link href={storeButtonLink} target={"_blank"}>
             <Image
-               src={StoreGraphic}
+               src={router.locale === "en" ? StoreGraphicEn : StoreGraphicPl}
                alt={"StoreGraphic"}
                style={{ width: "100%", marginBottom: "60px", objectFit: "contain" }}
                className={s.storeGraphic}
@@ -50,7 +54,7 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
 
          <Link href={storeButtonLink} target={"_blank"}>
             <Image
-               src={StoreGraphicMobile}
+               src={router.locale === "en" ? StoreGraphicMobileEn : StoreGraphicMobilePl}
                alt={"StoreGraphicMobile"}
                style={{ width: "100%", marginBottom: "60px" }}
                className={s.storeGraphicMobile}

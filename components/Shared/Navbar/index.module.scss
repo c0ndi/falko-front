@@ -8,6 +8,14 @@
   transition: 0.3s auto;
 }
 
+.locale {
+  position: relative;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .innerWrapper {
   transition: 0.3s auto;
   width: 100%;
@@ -46,7 +54,7 @@
 .hamburger {
   display: none;
   z-index: 3;
-  transform: translateX(6px)
+  transform: translateX(6px);
 }
 
 .mobileMenu {
@@ -114,6 +122,14 @@
 
   .socialIcons {
     display: none;
+  }
+
+  .locale {
+    color: #000;
+    gap: 38px;
+    margin-bottom: 16px;
+    justify-content: center;
+    margin-left: 0;
   }
 }
 

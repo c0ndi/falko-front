@@ -1,14 +1,15 @@
 import s from './index.module.scss'
-import {PropsWithChildren, useState} from "react";
-import {StrapiFile, StrapiFileArray} from "@/types/types";
+import { PropsWithChildren, useState } from "react";
+import { StrapiFile, StrapiFileArray } from "@/types/types";
 import Image from "next/image";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import RichText from "@/components/Shared/RichText";
-import {Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"
 import Link from "next/link";
 import SwiperCore from "swiper";
 import ArrowBlack from "@/public/icons/arrow-white.svg";
+import { useRouter } from 'next/router';
 
 type Manga = {
    attributes: {
@@ -23,12 +24,15 @@ type OurMangaProps = {
    subheading: string;
    secondSubheading: string;
    cover: StrapiFile;
-   mangas: { data: Manga [] };
+   mangas: { data: Manga[] };
 }
 
-export default function OurManga({content}: PropsWithChildren<{ content: OurMangaProps }>) {
-   const {heading, subheading, secondSubheading, cover, mangas} = content;
+export default function OurManga({ content }: PropsWithChildren<{ content: OurMangaProps }>) {
+   const { heading, subheading, secondSubheading, cover, mangas } = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
+
+   const router = useRouter();
+
    return (
       // @ts-ignore
       <section className={s.wrapper} name={"manga"}>
@@ -55,7 +59,7 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                      onSwiper={(swiper) => setSwiperInstance(swiper)}
                      breakpoints={{
                         1280: {
-                          slidesPerView: 4.5,
+                           slidesPerView: 4.5,
                         },
                         1080: {
                            slidesPerView: 3.5,
@@ -86,6 +90,14 @@ export default function OurManga({content}: PropsWithChildren<{ content: OurMang
                         </SwiperSlide>
                      ))}
                   </Swiper>
+
+                  <Link href="https://www.instagram.com/tokuriart/" target='_blank'>
+                     {router.locale === 'en' ?
+                        <p className={s.drawnBy}>DRAWN BY <span>TOKURI</span></p>
+                        :
+                        <p className={s.drawnBy}>NARYSOWANE PRZEZ <span>TOKURI</span></p>
+                     }
+                  </Link>
 
                   {/*{mangas.data.length > 2 &&*/}
                   {/*   <>*/}

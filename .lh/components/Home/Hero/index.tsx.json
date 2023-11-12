@@ -1,0 +1,26 @@
+{
+    "sourceFile": "components/Home/Hero/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1699822806021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699822823482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n                src={getSimpleImageUri(cover)}\n                alt={\"\"}\n                fill\n                priority\n-               quality={100}\n+               quality={159}\n             //   unoptimized={true}\n             />\n          </div>\n \n"
+                },
+                {
+                    "date": 1699822829809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                src={getSimpleImageUri(coverMobile)}\n                alt={\"Mobile\"}\n                fill\n                priority\n-               quality={150}\n+               quality={100}\n             // unoptimized={true}\n             />\n          </div>\n       </section>\n"
+                }
+            ],
+            "date": 1699822806021,
+            "name": "Commit-0",
+            "content": "import s from './index.module.scss'\nimport {StrapiFile} from \"@/types/types\";\nimport {PropsWithChildren} from \"react\";\nimport Image from \"next/image\";\nimport {getSimpleImageUri} from \"@/utils/getSimpleImageUri\";\n\ntype HeroProps = {\n   cover: StrapiFile;\n   coverMobile: StrapiFile;\n}\n\nexport default function Hero({content}: PropsWithChildren<{ content: HeroProps }>) {\n   const {cover, coverMobile} = content;\n   return (\n      <section className={s.wrapper}>\n         <div className={s.innerWrapper}>\n            <Image\n               src={getSimpleImageUri(cover)}\n               alt={\"\"}\n               fill\n               priority\n               quality={100}\n            //   unoptimized={true}\n            />\n         </div>\n\n         <div className={s.innerWrapperMobile}>\n            <Image\n               src={getSimpleImageUri(coverMobile)}\n               alt={\"Mobile\"}\n               fill\n               priority\n               // unoptimized={true}\n            />\n         </div>\n      </section>\n   )\n}"
+        }
+    ]
+}

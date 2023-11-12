@@ -3,11 +3,27 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1698156889528,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699822618857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,8 +85,26 @@\n                   }) || setOpen(false)}\n                />\n             </Link>\n \n+            <div className={s.locale}>\n+               {/* <Link href=\"/pl\" locale=\"pl\"> */}\n+               <button onClick={() => {\n+                  window.location.href = \"/pl\"\n+\n+                  if (window.location.pathname === \"/pl\") window.location.reload()\n+               }}>PL</button>\n+               {/* </Link> */}\n+               <button style={{ cursor: \"auto\" }}>|</button>\n+               {/* <Link href=\"/en\" locale=\"en\"> */}\n+               <button onClick={() => {\n+                  window.location.href = \"/en\"\n+\n+                  if (window.location.pathname === \"/en\") window.location.reload()\n+               }}>EN</button>\n+               {/* </Link> */}\n+            </div>\n+\n             <div className={s.socialIcons}>\n                <Link\n                   href={youtubeLink}\n                   target={\"_blank\"}\n"
+                },
+                {
+                    "date": 1699822648797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,8 +85,10 @@\n                   }) || setOpen(false)}\n                />\n             </Link>\n \n+            <div className={s.socialIcons}>\n+               \n             <div className={s.locale}>\n                {/* <Link href=\"/pl\" locale=\"pl\"> */}\n                <button onClick={() => {\n                   window.location.href = \"/pl\"\n@@ -103,9 +105,8 @@\n                }}>EN</button>\n                {/* </Link> */}\n             </div>\n \n-            <div className={s.socialIcons}>\n                <Link\n                   href={youtubeLink}\n                   target={\"_blank\"}\n                >\n"
+                },
+                {
+                    "date": 1699822658309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,27 +84,9 @@\n                      behavior: \"smooth\",\n                   }) || setOpen(false)}\n                />\n             </Link>\n-\n-            <div className={s.locale}>\n-               {/* <Link href=\"/pl\" locale=\"pl\"> */}\n-               <button onClick={() => {\n-                  window.location.href = \"/pl\"\n-\n-                  if (window.location.pathname === \"/pl\") window.location.reload()\n-               }}>PL</button>\n-               {/* </Link> */}\n-               <button style={{ cursor: \"auto\" }}>|</button>\n-               {/* <Link href=\"/en\" locale=\"en\"> */}\n-               <button onClick={() => {\n-                  window.location.href = \"/en\"\n-\n-                  if (window.location.pathname === \"/en\") window.location.reload()\n-               }}>EN</button>\n-               {/* </Link> */}\n-            </div>\n-\n+            \n             <div className={s.socialIcons}>\n                <Link\n                   href={youtubeLink}\n                   target={\"_blank\"}\n"
+                },
+                {
+                    "date": 1699822675244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,8 +175,26 @@\n                   </li>\n                ))}\n             </ul>\n \n+            <div className={s.locale}>\n+                  {/* <Link href=\"/pl\" locale=\"pl\"> */}\n+                  <button onClick={() => {\n+                     window.location.href = \"/pl\"\n+\n+                     if (window.location.pathname === \"/pl\") window.location.reload()\n+                  }}>PL</button>\n+                  {/* </Link> */}\n+                  <button style={{ cursor: \"auto\" }}>|</button>\n+                  {/* <Link href=\"/en\" locale=\"en\"> */}\n+                  <button onClick={() => {\n+                     window.location.href = \"/en\"\n+\n+                     if (window.location.pathname === \"/en\") window.location.reload()\n+                  }}>EN</button>\n+                  {/* </Link> */}\n+               </div>\n+\n             <div className={s.socialIconsMobile}>\n                <Link\n                   href={youtubeLink}\n                   target={\"_blank\"}\n"
                 }
             ],
             "date": 1698156889528,

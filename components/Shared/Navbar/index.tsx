@@ -131,6 +131,26 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                      height={18}
                   />
                </Link>
+
+
+               <div className={s.locale}>
+                  {/* <Link href="/pl" locale="pl"> */}
+                  <button onClick={() => {
+                     window.location.href = "/pl"
+
+                     if (window.location.pathname === "/pl") window.location.reload()
+                  }}>PL</button>
+                  {/* </Link> */}
+                  <button style={{ cursor: "auto" }}>|</button>
+                  {/* <Link href="/en" locale="en"> */}
+                  <button onClick={() => {
+                     window.location.href = "/en"
+
+                     if (window.location.pathname === "/en") window.location.reload()
+                  }}>EN</button>
+                  {/* </Link> */}
+               </div>
+
             </div>
 
             <div className={s.hamburger}>
@@ -155,6 +175,24 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                   </li>
                ))}
             </ul>
+
+            <div className={s.locale}>
+               {/* <Link href="/pl" locale="pl"> */}
+               <button onClick={() => {
+                  window.location.href = "/pl"
+
+                  if (window.location.pathname === "/pl") window.location.reload()
+               }}>PL</button>
+               {/* </Link> */}
+               <button style={{ cursor: "auto" }}>|</button>
+               {/* <Link href="/en" locale="en"> */}
+               <button onClick={() => {
+                  window.location.href = "/en"
+
+                  if (window.location.pathname === "/en") window.location.reload()
+               }}>EN</button>
+               {/* </Link> */}
+            </div>
 
             <div className={s.socialIconsMobile}>
                <Link
