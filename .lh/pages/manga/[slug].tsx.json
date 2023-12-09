@@ -3,11 +3,39 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1697050958193,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702154249555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,63 @@\n+import { getData } from \"@/utils/getData\";\n+import { useQuery } from \"@tanstack/react-query\";\n+import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n+import Loading from \"@/components/Shared/Loading\";\n+import { useRouter } from \"next/router\";\n+import Image from \"next/image\";\n+import MangaReader from \"@/components/Manga/MangaReader\";\n+import { getSimpleImageUri } from \"@/utils/getSimpleImageUri\";\n+import ArrowBackIcon from \"@/public/icons/arrow-back.svg\";\n+import Link from \"next/link\";\n+import Seo from \"@/components/Shared/Seo\";\n+\n+export default function Home() {\n+   const router = useRouter();\n+\n+   const { slug } = router.query;\n+   const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/mangas`, router.locale, slug) })\n+\n+   if (isLoading) {\n+      return <Loading />\n+   }\n+\n+   if (isError || !data.data.length) {\n+      return <ErrorComponent redirect />\n+   }\n+\n+   const { pages, title, backgroundCover, seo } = data.data[0].attributes;\n+\n+   return (\n+      <>\n+         <Seo seo={seo} />\n+         <main className={\"mangaWrapper\"}>\n+            <div className={\"backWrapper\"}>\n+               <Link\n+                  href={\"/\"}\n+                  className={\"back\"}\n+               >\n+                  <Image\n+                     src={ArrowBackIcon}\n+                     alt={\"\"}\n+                     width={40}\n+                     height={16}\n+                  />\n+\n+                  <p>Powrót</p>\n+               </Link>\n+\n+               {/*<h1>{title.toUpperCase()}</h1>*/}\n+            </div>\n+            <Image\n+               src={getSimpleImageUri(backgroundCover)}\n+               alt={title}\n+               fill\n+            />\n+\n+            <MangaReader\n+               pages={pages}\n+               title={title}\n+            />\n+         </main>\n+      </>\n+   )\n+}\n"
+                },
+                {
+                    "date": 1702154259624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,67 +60,4 @@\n          </main>\n       </>\n    )\n }\n-import {getData} from \"@/utils/getData\";\n-import {useQuery} from \"@tanstack/react-query\";\n-import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n-import Loading from \"@/components/Shared/Loading\";\n-import {useRouter} from \"next/router\";\n-import Image from \"next/image\";\n-import MangaReader from \"@/components/Manga/MangaReader\";\n-import {getSimpleImageUri} from \"@/utils/getSimpleImageUri\";\n-import ArrowBackIcon from \"@/public/icons/arrow-back.svg\";\n-import Link from \"next/link\";\n-import Seo from \"@/components/Shared/Seo\";\n-\n-export default function Home() {\n-   const router = useRouter();\n-\n-   const {slug} = router.query;\n-   const {data, isLoading, isError} = useQuery({queryKey: [slug], queryFn: () => getData(`/mangas`,router.locale, slug)})\n-\n-   if (isLoading) {\n-      return <Loading/>\n-   }\n-\n-   if (isError || !data.data.length) {\n-      return <ErrorComponent redirect/>\n-   }\n-\n-   const {pages, title, backgroundCover, seo} = data.data[0].attributes;\n-\n-   return (\n-      <>\n-         <Seo seo={seo}/>\n-         <main className={\"mangaWrapper\"}>\n-            <div className={\"backWrapper\"}>\n-               <Link\n-                  href={\"/\"}\n-                  className={\"back\"}\n-               >\n-                  <Image\n-                     src={ArrowBackIcon}\n-                     alt={\"\"}\n-                     width={40}\n-                     height={16}\n-                  />\n-\n-                  <p>Powrót</p>\n-               </Link>\n-\n-               {/*<h1>{title.toUpperCase()}</h1>*/}\n-            </div>\n-            <Image\n-               src={getSimpleImageUri(backgroundCover)}\n-               alt={title}\n-               fill\n-            />\n-\n-            <MangaReader\n-               pages={pages}\n-               title={title}\n-            />\n-         </main>\n-      </>\n-   )\n-}\n"
+                },
+                {
+                    "date": 1702154265526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,8 @@\n             </div>\n             <Image\n                src={getSimpleImageUri(backgroundCover)}\n                alt={title}\n-               fill\n             />\n \n             <MangaReader\n                pages={pages}\n"
+                },
+                {
+                    "date": 1702154284978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,10 @@\n             </div>\n             <Image\n                src={getSimpleImageUri(backgroundCover)}\n                alt={title}\n+               fill\n+               className=\"mangaBackground object-cover\"\n             />\n \n             <MangaReader\n                pages={pages}\n"
+                },
+                {
+                    "date": 1702154290329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,15 @@\n                fill\n                className=\"mangaBackground object-cover\"\n             />\n \n+<Image\n+               src={getSimpleImageUri(backgroundCover)}\n+               alt={title}\n+               fill\n+               className=\"mangaBackground object-cover\"\n+            />\n+\n             <MangaReader\n                pages={pages}\n                title={title}\n             />\n"
+                },
+                {
+                    "date": 1702154304274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n    if (isError || !data.data.length) {\n       return <ErrorComponent redirect />\n    }\n \n-   const { pages, title, backgroundCover, seo } = data.data[0].attributes;\n+   const { pages, title, backgroundCover, seo, backgroundCoverMobile} = data.data[0].attributes;\n \n    return (\n       <>\n          <Seo seo={seo} />\n@@ -57,9 +57,9 @@\n             <Image\n                src={getSimpleImageUri(backgroundCover)}\n                alt={title}\n                fill\n-               className=\"mangaBackground object-cover\"\n+               className=\"mangaBackgroundMobile object-cover\"\n             />\n \n             <MangaReader\n                pages={pages}\n"
+                },
+                {
+                    "date": 1702154516808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n             <Image\n                src={getSimpleImageUri(backgroundCoverMobile)}\n                alt={title}\n                fill\n-               className=\"mangaBackgroundMobile object-cover\"\n+               className=\"mangaBackgroundMobile\"\n             />\n \n             <MangaReader\n                pages={pages}\n"
                 }
             ],
             "date": 1697050958193,

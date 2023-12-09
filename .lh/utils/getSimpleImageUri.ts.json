@@ -1,0 +1,26 @@
+{
+    "sourceFile": "utils/getSimpleImageUri.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1702154342691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702154355487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { StrapiFile } from \"@/types/types\";\n import { strapiURL } from \"@/config/axios\";\n \n export function getSimpleImageUri(image: StrapiFile) {\n-  if (!image) return \"\";\n+   console.log(image)\n \n   return strapiURL + image.data.attributes.url;\n }\n"
+                },
+                {
+                    "date": 1702154377669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { StrapiFile } from \"@/types/types\";\n import { strapiURL } from \"@/config/axios\";\n \n export function getSimpleImageUri(image: StrapiFile) {\n-  console.log(image);\n+   if(!image.data) return \"\";\n \n   return strapiURL + image.data.attributes.url;\n }\n"
+                }
+            ],
+            "date": 1702154342691,
+            "name": "Commit-0",
+            "content": "import {StrapiFile} from \"@/types/types\";\nimport {strapiURL} from \"@/config/axios\";\n\nexport function getSimpleImageUri(image: StrapiFile){\n   if(!image) return ''\n   return strapiURL + image.data.attributes.url\n}"
+        }
+    ]
+}

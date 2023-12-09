@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   height: 100%;
-  justify-content: space-between;
+  gap: 24px;
 
   .logo {
     margin: 0 auto;
@@ -34,7 +34,7 @@
   ul {
     display: flex;
     gap: 32px;
-    width: 50%;
+    width: max-content;
 
     li {
       font-size: 19px;
@@ -44,11 +44,12 @@
 }
 
 .socialIcons {
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 16px;
-  width: 50%;
+  width: max-content;
 }
 
 .hamburger {
@@ -143,6 +144,7 @@
   }
   .hamburger {
     display: block;
+    margin-left: auto;
   }
 
   .innerWrapper {

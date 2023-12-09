@@ -61,6 +61,19 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
          style={{ transition: "0.3s" }}
       >
          <div className={s.innerWrapper}>
+            <Link href={"/"}>
+               <Image
+                  src={getSimpleImageUri(logoNav)}
+                  alt={"Logo"}
+                  width={60}
+                  height={60}
+                  className={s.logo}
+                  onClick={() => window.scrollTo({
+                     top: 0,
+                     behavior: "smooth",
+                  }) || setOpen(false)}
+               />
+            </Link>
 
             <ul>
                {navLinks.map((link, index) => (
@@ -72,19 +85,7 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                ))}
             </ul>
 
-            <Link href={"/"}>
-               <Image
-                  src={getSimpleImageUri(logoNav)}
-                  alt={"Logo"}
-                  width={75}
-                  height={75}
-                  className={s.logo}
-                  onClick={() => window.scrollTo({
-                     top: 0,
-                     behavior: "smooth",
-                  }) || setOpen(false)}
-               />
-            </Link>
+
 
             <div className={s.socialIcons}>
                <Link

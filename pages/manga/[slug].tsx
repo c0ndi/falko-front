@@ -24,7 +24,7 @@ export default function Home() {
       return <ErrorComponent redirect />
    }
 
-   const { pages, title, backgroundCover, seo } = data.data[0].attributes;
+   const { pages, title, backgroundCover, seo, backgroundCoverMobile } = data.data[0].attributes;
 
    return (
       <>
@@ -51,6 +51,14 @@ export default function Home() {
                src={getSimpleImageUri(backgroundCover)}
                alt={title}
                fill
+               className="mangaBackground object-cover"
+            />
+
+            <Image
+               src={getSimpleImageUri(backgroundCoverMobile)}
+               alt={title}
+               fill
+               className="mangaBackgroundMobile"
             />
 
             <MangaReader

@@ -156,3 +156,22 @@ a {
     }
   }
 }
+
+.mangaBackground {
+  object-fit: cover;
+}
+
+.mangaBackgroundMobile {
+  display: none;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .mangaBackground {
+    display: none;
+  }
+
+  .mangaBackgroundMobile {
+    display: block;
+  }
+}
