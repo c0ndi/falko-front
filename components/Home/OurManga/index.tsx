@@ -69,22 +69,26 @@ export default function OurManga({ content }: PropsWithChildren<{ content: OurMa
                            spaceBetween: 16,
                         },
                         1: {
-                           slidesPerView: 1.5,
+                           slidesPerView: 1.4,
                         },
                      }}
                   >
                      {mangas.data.map((manga, index) => (
                         <SwiperSlide key={index}>
                            <Link href={`/manga/${manga.attributes.slug}`} prefetch={false}>
-                              <div className={s.mangaWrapper}>
-                                 <Image
-                                    src={getSimpleImageUri(manga.attributes.titleCover)}
-                                    alt={manga.attributes.title}
-                                    width={250}
-                                    height={350}
-                                    priority
-                                 />
-                              </div>
+                              {/* <div className={s.mangaWrapper}> */}
+                              <Image
+                                 src={getSimpleImageUri(manga.attributes.titleCover)}
+                                 alt={manga.attributes.title}
+                                 width={250}
+                                 style={{
+                                    aspectRatio: '9/16',
+                                    borderRadius: '10px'
+                                 }}
+                                 height={350}
+                                 priority
+                              />
+                              {/* </div> */}
                               <p className={s.mangaTitle}>{manga.attributes.title.toUpperCase()}</p>
                            </Link>
                         </SwiperSlide>
@@ -99,29 +103,29 @@ export default function OurManga({ content }: PropsWithChildren<{ content: OurMa
                      }
                   </Link>
 
-                  {/*{mangas.data.length > 2 &&*/}
-                  {/*   <>*/}
-                  {/*      <button*/}
-                  {/*         onClick={() => swiperInstance?.slidePrev()}*/}
-                  {/*         className={s.btnPrev}*/}
-                  {/*      >*/}
-                  {/*         <Image*/}
-                  {/*            src={ArrowBlack}*/}
-                  {/*            alt={"arrow"}*/}
-                  {/*         />*/}
-                  {/*      </button>*/}
+                  {mangas.data.length > 2 &&
+                     <>
+                        <button
+                           onClick={() => swiperInstance?.slidePrev()}
+                           className={s.btnPrev}
+                        >
+                           <Image
+                              src={ArrowBlack}
+                              alt={"arrow"}
+                           />
+                        </button>
 
-                  {/*      <button*/}
-                  {/*         onClick={() => swiperInstance?.slideNext()}*/}
-                  {/*         className={s.btnNext}*/}
-                  {/*      >*/}
-                  {/*         <Image*/}
-                  {/*            src={ArrowBlack}*/}
-                  {/*            alt={"arrow"}*/}
-                  {/*         />*/}
-                  {/*      </button>*/}
-                  {/*   </>*/}
-                  {/*}*/}
+                        <button
+                           onClick={() => swiperInstance?.slideNext()}
+                           className={s.btnNext}
+                        >
+                           <Image
+                              src={ArrowBlack}
+                              alt={"arrow"}
+                           />
+                        </button>
+                     </>
+                  }
                </div>
             </div>
          </div>
