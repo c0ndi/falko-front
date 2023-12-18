@@ -67,6 +67,7 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                   alt={"Logo"}
                   width={60}
                   height={60}
+                  priority
                   className={s.logo}
                   onClick={() => window.scrollTo({
                      top: 0,

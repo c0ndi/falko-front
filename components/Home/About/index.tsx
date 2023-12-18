@@ -1,9 +1,9 @@
 import s from './index.module.scss'
-import {StrapiFile} from "@/types/types";
-import {PropsWithChildren, useContext, useRef, useState} from "react";
+import { StrapiFile } from "@/types/types";
+import { PropsWithChildren, useContext, useRef, useState } from "react";
 import Image from "next/image";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
-import {DataContext} from "@/components/Shared/Layout";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
+import { DataContext } from "@/components/Shared/Layout";
 import Link from "next/link";
 import ArrowWhite from "@/public/icons/arrow-white.svg";
 import JapaneseText from "@/public/images/about-japanese-text.svg";
@@ -23,16 +23,17 @@ type AboutProps = {
    videoPoster: StrapiFile;
    descriptionHeading: string;
    descriptionText: string;
-   infos: { info: string } [];
+   infos: { info: string }[];
    socialLabel: string;
    cover: StrapiFile;
+   coverMobile: StrapiFile;
 }
 
-export default function About({content}: PropsWithChildren<{ content: AboutProps }>) {
-   const {heading, subheading, secondSubheading, video, videoPoster, socialLabel, cover, descriptionHeading, descriptionText, infos} = content;
+export default function About({ content }: PropsWithChildren<{ content: AboutProps }>) {
+   const { heading, subheading, secondSubheading, video, videoPoster, socialLabel, cover, coverMobile, descriptionHeading, descriptionText, infos } = content;
 
 
-   const {data} = useContext(DataContext);
+   const { data } = useContext(DataContext);
 
    const videoElement = useRef(null);
 
@@ -61,6 +62,16 @@ export default function About({content}: PropsWithChildren<{ content: AboutProps
             priority
             unoptimized={true}
          />
+
+         <Image
+            src={getSimpleImageUri(coverMobile)}
+            alt={""}
+            fill
+            className={s.bgCoverMobile}
+            priority
+            unoptimized={true}
+         />
+
 
          <div className={s.innerWrapper}>
             <div className={s.topWrapper}>

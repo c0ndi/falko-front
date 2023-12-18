@@ -1,8 +1,9 @@
 import s from './index.module.scss'
-import {StrapiFile} from "@/types/types";
+import { StrapiFile } from "@/types/types";
 import Image from "next/image";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 export type SingleItemT = {
     title: string;
@@ -14,8 +15,10 @@ export type SingleItemT = {
     newBadge?: boolean;
 }
 
-export default function SingleItem({content}: { content: SingleItemT }) {
-    const {title, shopLink, price, cover, soldOutBadge, comingSoonBadge, newBadge} = content;
+export default function SingleItem({ content }: { content: SingleItemT }) {
+    const { title, shopLink, price, cover, soldOutBadge, comingSoonBadge, newBadge } = content;
+
+    const router = useRouter();
     return (
         <article className={s.wrapper}>
             <Link
@@ -42,7 +45,7 @@ export default function SingleItem({content}: { content: SingleItemT }) {
                         <p className={s.price}>{price}</p>
                     </div>
 
-                    <span>Check out</span>
+                    <span>{router.locale == "en" ? "Check out" : "Kup teraz"}</span>
                 </div>
             </Link>
         </article>

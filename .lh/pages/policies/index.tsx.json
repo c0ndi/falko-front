@@ -1,0 +1,26 @@
+{
+    "sourceFile": "pages/policies/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1702855907333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702855918300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,39 @@\n       </article>\n    )\n }\n \n+function English() {\n+   return (\n+      <article>\n+      <h2>Shipping policy</h2>\n+      <p>\n+         Shipping for items in stock takes 1 to 2 business days\n+         Pre-order items take longer to ship. The shipping time is individual for a given item and is provided on the purchase page.\n+      </p>\n+\n+      <br/>\n+      <br/>\n+\n+      <h2>Refund policy</h2>\n+      <p>\n+         Due to the nature of our business we only accept DOMESTIC returns (no exchanges) at this moment.\n+         <br/>\n+         <br/>\n+         We are located in Poland.\n+         <br/>\n+         Domestic returns are only being accepted for 14 days – since the day of delivery.\n+         <br/>\n+         <br/>\n+         We only accept returns of items that still have all the labels and have no marks of rocking !\n+         <br/>\n+         <br/>\n+         For instructions regarding returns please contact us by e-mail: info@falkoproject.com\n+      </p>\n+   </article>\n+   )\n+}\n+\n export default function Policies() {\n    return (\n       <>\n          <Head>\n"
+                },
+                {
+                    "date": 1702855936728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,9 @@\n    )\n }\n \n export default function Policies() {\n+   const router = useRouter();\n    return (\n       <>\n          <Head>\n             <title>Terms and Conditions</title>\n"
+                }
+            ],
+            "date": 1702855907333,
+            "name": "Commit-0",
+            "content": "import PoliciesBg from '@/public/images/policies-bg.webp';\nimport Image from \"next/image\";\nimport Head from \"next/head\";\n\nfunction Polish() {\n   return (\n      <article>\n      <h2>Shipping policy</h2>\n      <p>\n         Shipping for items in stock takes 1 to 2 business days\n         Pre-order items take longer to ship. The shipping time is individual for a given item and is provided on the purchase page.\n      </p>\n\n      <br/>\n      <br/>\n\n      <h2>Refund policy</h2>\n      <p>\n         Due to the nature of our business we only accept DOMESTIC returns (no exchanges) at this moment.\n         <br/>\n         <br/>\n         We are located in Poland.\n         <br/>\n         Domestic returns are only being accepted for 14 days – since the day of delivery.\n         <br/>\n         <br/>\n         We only accept returns of items that still have all the labels and have no marks of rocking !\n         <br/>\n         <br/>\n         For instructions regarding returns please contact us by e-mail: info@falkoproject.com\n      </p>\n   </article>\n   )\n}\n\nexport default function Policies() {\n   return (\n      <>\n         <Head>\n            <title>Terms and Conditions</title>\n         </Head>\n         <main className={\"policiesPage\"}>\n            <section>\n               <Image\n                  src={PoliciesBg}\n                  alt={\"\"}\n                  fill\n                  draggable={false}\n               />\n\n\n            </section>\n         </main>\n      </>\n   )\n}"
+        }
+    ]
+}

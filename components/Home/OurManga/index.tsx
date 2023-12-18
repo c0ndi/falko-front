@@ -24,11 +24,12 @@ type OurMangaProps = {
    subheading: string;
    secondSubheading: string;
    cover: StrapiFile;
+   coverMobile: StrapiFile;
    mangas: { data: Manga[] };
 }
 
 export default function OurManga({ content }: PropsWithChildren<{ content: OurMangaProps }>) {
-   const { heading, subheading, secondSubheading, cover, mangas } = content;
+   const { heading, subheading, secondSubheading, cover, coverMobile, mangas } = content;
    const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
    const router = useRouter();
@@ -41,6 +42,15 @@ export default function OurManga({ content }: PropsWithChildren<{ content: OurMa
             alt={""}
             fill
             className={s.bgCover}
+            priority
+            unoptimized={true}
+         />
+
+         <Image
+            src={getSimpleImageUri(coverMobile)}
+            alt={""}
+            fill
+            className={s.bgCoverMobile}
             priority
             unoptimized={true}
          />

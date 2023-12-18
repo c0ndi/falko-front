@@ -1,14 +1,14 @@
-import s from './index.module.scss'
-import { PropsWithChildren } from "react";
-import Link from "next/link";
 import SingleItem, { SingleItemT } from "@/components/Home/Collection/SingleItem";
-import Image from "next/image";
 import StoreGraphicEn from '@/public/images/store-desktop-en.png';
 import StoreGraphicPl from '@/public/images/store-desktop-pl.png';
 import StoreGraphicMobileEn from '@/public/images/store-mobile-en.png';
 import StoreGraphicMobilePl from '@/public/images/store-mobile-pl.png';
 import Gif from '@/public/images/walking.gif';
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from 'next/router';
+import { PropsWithChildren } from "react";
+import s from './index.module.scss';
 
 type CollectionProps = {
    heading: string;
@@ -61,7 +61,7 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
             />
          </Link>
 
-         <p className={s.heading}>LATEST STUFF</p>
+         <p className={s.heading}>{router.locale === "en" ? "HOTTEST STUFF" : "WYRÓŻNIONE"} </p>
 
          <div className={s.itemsWrapper}>
             <Image

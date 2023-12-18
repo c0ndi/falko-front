@@ -122,8 +122,6 @@ a {
 }
 
 .policiesPage {
-  height: 95vh;
-
   img {
     object-fit: cover;
     z-index: -1;
@@ -138,7 +136,9 @@ a {
     margin: 0 auto;
     width: 500px;
     color: #fff;
-    padding: 200px 12px 0;
+    padding: 0 12px;
+    padding-top: 200px;
+    padding-bottom: 100px;
 
     @media (max-width: 529px) {
       width: 100%;
@@ -166,6 +166,14 @@ a {
   object-fit: cover;
 }
 
+.policies-mobile {
+  display: none;
+}
+
+.policies-desktop {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .mangaBackground {
     display: none;
@@ -173,5 +181,13 @@ a {
 
   .mangaBackgroundMobile {
     display: block;
+  }
+
+  .policies-mobile {
+    display: block;
+  }
+
+  .policies-desktop {
+    display: none;
   }
 }

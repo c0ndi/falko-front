@@ -7,6 +7,7 @@ import Link from "next/link";
 import ArrowBlack from '@/public/icons/arrow-black-small.svg';
 import { useForm } from "react-hook-form";
 import axios from '@/config/axios';
+import { useRouter } from 'next/router';
 
 type FooterProps = {
    facebookLink: string;
@@ -21,6 +22,8 @@ type FooterProps = {
 export default function Footer({ content }: PropsWithChildren<{ content: FooterProps }>) {
    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<{ email: string }>();
    const [status, setStatus] = useState<"normal" | "sending" | "success" | "error">("normal");
+
+   const router = useRouter();
 
    const onSubmit = async (data: { email: string }) => {
       setStatus("sending");
@@ -57,9 +60,9 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
             {/*   className={s.phone}*/}
             {/*>Tel. {phoneNumber}</Link>*/}
 
-            <Link href={"/policies"}>
+            <Link href={`/${router.locale}/policies`}>
                <p style={{ fontWeight: 600 }}>
-                  Terms and Conditions
+                  {router.locale === "pl" ? "Regulamin" : "Terms and Conditions"}
                </p>
             </Link>
 
