@@ -47,6 +47,7 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
             width={75}
             height={75}
             alt="logo"
+            className={s.logo}
          />
 
          <div className={s.data}>
@@ -67,21 +68,17 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
             </Link>
 
             <div className={s.locale}>
-               {/* <Link href="/pl" locale="pl"> */}
                <button onClick={() => {
                   window.location.href = "/pl"
 
                   if (window.location.pathname === "/pl") window.location.reload()
                }}>PL</button>
-               {/* </Link> */}
                <button style={{ cursor: "auto" }}>|</button>
-               {/* <Link href="/en" locale="en"> */}
                <button onClick={() => {
                   window.location.href = "/en"
 
                   if (window.location.pathname === "/en") window.location.reload()
                }}>EN</button>
-               {/* </Link> */}
             </div>
          </div>
 

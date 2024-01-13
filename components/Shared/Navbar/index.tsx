@@ -30,6 +30,7 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
    const { facebookLink, instagramLink, youtubeLink, tiktokLink } = content;
 
    const [scrollTop, setScrollTop] = useState(0);
+   const [scrollImage, setScrollImage] = useState(false);
 
    const onScroll = (e: any) => {
       setScrollTop(e.target.documentElement.scrollTop);
@@ -44,13 +45,13 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
          if (scrollTop > 0 || isOpen) {
             document.querySelector('nav').style.position = "fixed";
             document.querySelector('nav').style.background = "#faf6eb";
-            document.querySelector('nav > div').style.filter = "invert(1)";
             document.querySelector('nav').style.padding = "3px 12px";
+            setScrollImage(true)
          } else {
             document.querySelector('nav').style.position = "absolute";
             document.querySelector('nav').style.background = "transparent";
-            document.querySelector('nav > div').style.filter = "invert(0)";
             document.querySelector('nav').style.padding = "3px 12px";
+            setScrollImage(false)
          }
       }
    }, [scrollTop, isOpen])
@@ -62,18 +63,34 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
       >
          <div className={s.innerWrapper}>
             <Link href={"/"}>
-               <Image
-                  src={getSimpleImageUri(logoNav)}
-                  alt={"Logo"}
-                  width={60}
-                  height={60}
-                  priority
-                  className={s.logo}
-                  onClick={() => window.scrollTo({
-                     top: 0,
-                     behavior: "smooth",
-                  }) || setOpen(false)}
-               />
+               {!scrollImage ? (
+                  <Image
+                     src={getSimpleImageUri(logoNav)}
+                     alt={"Logo"}
+                     width={60}
+                     height={60}
+                     priority
+                     className={s.logo}
+                     onClick={() => window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                     }) || setOpen(false)}
+                  />
+               )
+                  :
+                  <Image
+                     src={'/images/falko-black.png'}
+                     alt={"Logo"}
+                     width={60}
+                     height={60}
+                     priority
+                     className={s.logo}
+                     onClick={() => window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                     }) || setOpen(false)}
+                  />
+               }
             </Link>
 
             <ul>

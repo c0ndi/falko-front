@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1702858160658,
@@ -20,6 +20,10 @@
                 {
                     "date": 1702858373128,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n             unoptimized={true}\n          />\n \n          <Image\n-            src={getSimpleImageUri(cover)}\n+            src={getSimpleImageUri(coverMobile)}\n             alt={\"\"}\n             fill\n             className={s.bgCoverMobile}\n             priority\n"
+                },
+                {
+                    "date": 1705150474787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,10 @@\n type AboutProps = {\n    heading: string;\n    subheading: string;\n    secondSubheading: string;\n-   video: StrapiFile;\n+   // video: StrapiFile;\n+   videoLink: string;\n    videoPoster: StrapiFile;\n    descriptionHeading: string;\n    descriptionText: string;\n    infos: { info: string }[];\n"
                 }
             ],
             "date": 1702858160658,

@@ -19,7 +19,8 @@ type AboutProps = {
    heading: string;
    subheading: string;
    secondSubheading: string;
-   video: StrapiFile;
+   // video: StrapiFile;
+   videoLink: string;
    videoPoster: StrapiFile;
    descriptionHeading: string;
    descriptionText: string;
@@ -30,26 +31,25 @@ type AboutProps = {
 }
 
 export default function About({ content }: PropsWithChildren<{ content: AboutProps }>) {
-   const { heading, subheading, secondSubheading, video, videoPoster, socialLabel, cover, coverMobile, descriptionHeading, descriptionText, infos } = content;
-
+   const { heading, subheading, secondSubheading, videoLink, videoPoster, socialLabel, cover, coverMobile, descriptionHeading, descriptionText, infos } = content;
 
    const { data } = useContext(DataContext);
 
-   const videoElement = useRef(null);
+   // const videoElement = useRef(null);
 
-   const [isPlaying, setIsPlaying] = useState(false);
-   const handleVideoControls = () => {
-      if (videoElement !== null) {
-         if (isPlaying) {
-            // @ts-ignore
-            videoElement.current.pause();
-         } else {
-            // @ts-ignore
-            videoElement.current.play();
-         }
-         setIsPlaying((isPlaying) => !isPlaying);
-      }
-   };
+   // const [isPlaying, setIsPlaying] = useState(false);
+   // const handleVideoControls = () => {
+   //    if (videoElement !== null) {
+   //       if (isPlaying) {
+   //          // @ts-ignore
+   //          videoElement.current.pause();
+   //       } else {
+   //          // @ts-ignore
+   //          videoElement.current.play();
+   //       }
+   //       setIsPlaying((isPlaying) => !isPlaying);
+   //    }
+   // };
 
    return (
       // @ts-ignore
@@ -91,14 +91,15 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
 
             <div className={s.bottomWrapper}>
                <div className={s.videoWrapper}>
-                  <video
+                  <iframe src={videoLink} />
+                  {/* <video
                      controls={false}
                      disableRemotePlayback
                      src={getSimpleImageUri(video)}
                      ref={videoElement}
                      poster={getSimpleImageUri(videoPoster)}
-                  />
-
+                  /> */}
+                  {/* 
                   {!isPlaying ?
                      <Image
                         src={VideoStart}
@@ -117,7 +118,7 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
                         height={50}
                         width={50}
                      />
-                  }
+                  } */}
 
                   {/*<Image*/}
                   {/*   src={JapaneseText}*/}

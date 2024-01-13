@@ -10,7 +10,7 @@ function Polish() {
          <h2>POLITYKA WYSYŁKI</h2>
 
          <p>
-            Wysyłka produktów dostępnych w magazynie trwa od 1 do 2 dni roboczych. Niestety, ze względu na nasz dwuosobowy zespół, wysyłka może potrwać nieco dłużej, gdy obciążenie pracą jest większe.
+            Wysyłka produktów dostępnych w magazynie trwa około 5 dni roboczych. Niestety, ze względu na nasz dwuosobowy zespół, wysyłka może potrwać nieco dłużej, gdy obciążenie pracą jest większe.
             <br />
             <br />
             Wysyłka produktów zamówionych w przedsprzedaży trwa dłużej. Czas wysyłki zależy od produktu i jest podany na stronie zakupu.
@@ -46,7 +46,7 @@ function English() {
       <article>
          <h2>Shipping policy</h2>
          <p>
-            Shipping of in-stock products takes between 1 and 2 working days. Unfortunately, due to our two-person team, shipping may take a little longer when the workload is heavier.
+            Shipping of in-stock products takes 5 working days. Unfortunately, due to our two-person team, shipping may take a little longer when the workload is heavier.
 
             <br />
             <br />

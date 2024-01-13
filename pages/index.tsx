@@ -4,34 +4,10 @@ import OurManga from "@/components/Home/OurManga";
 import OurStoryboards from "@/components/Home/OurStoryboards";
 import About from "@/components/Home/About";
 import { getData } from "@/utils/getData";
-import { useQuery } from "@tanstack/react-query";
-import ErrorComponent from "@/components/Shared/ErrorComponent";
-import Loading from "@/components/Shared/Loading";
 import Seo from "@/components/Shared/Seo";
 import { useRouter } from "next/router";
 
-export async function getServerSideProps({ req, res }: { req: any, res: any }) {
-   res.setHeader(
-      'Cache-Control',
-      'public, s-maxage=10, stale-while-revalidate=59'
-   )
-   const homeData = await getData("/home", req.locale)
-   return { props: { homeData } }
-}
-
-export default function Home({ homeData }: any) {
-   const router = useRouter();
-
-   const { data, isLoading, isError } = useQuery({ queryKey: ['home'], queryFn: () => getData("/home", router.locale), initialData: homeData })
-
-   if (isLoading) {
-      return <Loading />
-   }
-
-   if (isError) {
-      return <ErrorComponent />
-   }
-
+export default function Home({ data }: any) {
    const {
       hero,
       collection,
@@ -55,4 +31,15 @@ export default function Home({ homeData }: any) {
          <About content={about} />
       </>
    )
+}
+
+export const getStaticProps = async ({ locale }: { locale: string }) => {
+   const data = await getData("/home", locale)
+
+   return {
+      props: {
+         data
+      },
+      revalidate: 10
+   }
 }
