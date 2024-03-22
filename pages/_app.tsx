@@ -1,20 +1,20 @@
 import '@/styles/globals.scss'
 import '@/styles/reset.scss'
 import '@/styles/shared.scss'
-import type {AppProps} from 'next/app'
-import {QueryClient} from "@tanstack/query-core";
-import {QueryClientProvider} from "@tanstack/react-query";
-import {useRouter} from "next/router";
+import type { AppProps } from 'next/app'
+import { QueryClient } from "@tanstack/query-core";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { useRouter } from "next/router";
 import Layout from "@/components/Shared/Layout";
-import {useEffect} from "react";
+import { useEffect } from "react";
 import Script from "next/script"
 import * as gtag from '@/gtag'
 
 const queryClient = new QueryClient()
 
-export default function App({Component, pageProps}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
-    const layoutPaths = ["/", "/storyboardy", "/policies"];
+    const layoutPaths = ["/", "/policies"];
     const isLayout = layoutPaths.includes(router.pathname);
 
     useEffect(() => {

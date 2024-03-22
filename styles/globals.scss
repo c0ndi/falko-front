@@ -10,7 +10,8 @@
 }
 
 * {
-  font-family: TsunagiGothic;
+  // font-family: TsunagiGothic;
+  font-family: "Arial";
   box-sizing: border-box;
 }
 
@@ -43,7 +44,7 @@ img {
 }
 
 .errorPage {
-  font-family: TsunagiGothic, sans-serif;
+  font-family: "Arial";
   height: 90vh;
   display: flex;
   justify-content: center;

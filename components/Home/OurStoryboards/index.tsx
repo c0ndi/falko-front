@@ -1,11 +1,11 @@
 import s from './index.module.scss'
-import {StrapiFile, StrapiFileArray} from "@/types/types";
-import {PropsWithChildren, ReactNode, useEffect, useState} from "react";
+import { StrapiFile, StrapiFileArray } from "@/types/types";
+import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import 'swiper/css';
 import Link from "next/link";
 import RichText from "@/components/Shared/RichText";
-import FalkoSketchbook from "@/public/images/falko-sketchbook.png";
+import FalkoArchive from "@/public/images/falko-archive.png";
 import FalkoSketchbookMobile from "@/public/images/falko-sketchbook-mobile.webp";
 
 type Storyboard = {
@@ -22,13 +22,13 @@ type OurStoryboardsProps = {
    subheading: string;
    secondSubheading: string;
    description: string;
-   storyboards: { data: Storyboard [] };
+   storyboards: { data: Storyboard[] };
    newBadge: boolean;
    linkLabel: string;
 }
 
-export default function OurStoryboards({content}: PropsWithChildren<{ content: OurStoryboardsProps }>) {
-   const {heading, subheading, secondSubheading, description, linkLabel} = content;
+export default function OurStoryboards({ content }: PropsWithChildren<{ content: OurStoryboardsProps }>) {
+   const { heading, subheading, secondSubheading, description, linkLabel } = content;
    return (
       <section
          className={s.wrapper}
@@ -45,18 +45,18 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
             </div>
 
             <Image
-               src={FalkoSketchbookMobile}
+               src={FalkoArchive}
                alt={"FirstCover"}
                className={s.imageMobile}
                quality={65}
             />
 
             <div className={s.textWrapper}>
-               <RichText desc={description}/>
+               <RichText desc={description} />
             </div>
 
             <Link
-               href={"/storyboardy"}
+               href={"/"}
                className={s.link}
             >
                {linkLabel}
@@ -65,7 +65,7 @@ export default function OurStoryboards({content}: PropsWithChildren<{ content: O
 
          </div>
          <Image
-            src={FalkoSketchbook}
+            src={FalkoArchive}
             alt={"FirstCover"}
             className={s.image}
             quality={100}

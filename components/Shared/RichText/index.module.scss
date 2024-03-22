@@ -14,19 +14,24 @@
     font-weight: 500;
   }
 
-  h1, h2, h3, h4, h5, h6{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 20px;
     font-weight: 700;
     margin-top: 24px;
   }
 
-  li{
+  li {
     list-style-type: disc;
     margin: 0 10px;
     font-weight: bold;
   }
 
-  strong{
+  strong {
     font-weight: 700;
   }
 
@@ -34,7 +39,8 @@
     padding: 6px 0;
   }
 
-  blockquote, pre {
+  blockquote,
+  pre {
     border-left: 4px solid black;
     padding: 6px 24px;
     margin: 16px 0;
@@ -72,7 +78,8 @@
   font-weight: 900;
 }
 
-.customUl, .customOl {
+.customUl,
+.customOl {
   display: grid;
   gap: 16px;
   margin: 30px 0;
@@ -85,7 +92,7 @@
 .customLi {
   font-size: 17px;
   font-weight: 400;
-  font-family: TsunagiGothic, sans-serif;
+  font-family: "Arial";
 
   &::before {
     content: "";

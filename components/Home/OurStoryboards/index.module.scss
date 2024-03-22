@@ -4,7 +4,7 @@
   display: flex;
   gap: 50px;
   padding: 45px 0;
-  font-family: TsunagiGothic, sans-serif;
+  font-family: "Arial";
 }
 
 .title {
@@ -70,9 +70,10 @@
 
 .image {
   margin-left: auto;
+  max-height: 400px;
+  width: auto;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-
 
 .imageMobile {
   display: none;
@@ -146,4 +147,3 @@
     }
   }
 }
-
