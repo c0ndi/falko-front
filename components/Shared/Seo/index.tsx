@@ -32,6 +32,11 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
   return (
     <Head>
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta
+        property="og:image"
+        content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
+        key="og:image"
+      />
       {seoData ?
         <>
           <title>{seoData.metaTitle}</title>
@@ -173,6 +178,11 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
       <meta
         name="theme-color"
         content="#ffffff"
+      />
+      <meta
+        property="og:image"
+        content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
+        key="og:image"
       />
     </Head>
   )
