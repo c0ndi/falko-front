@@ -1,8 +1,7 @@
-import { PropsWithChildren } from "react";
-import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import { strapiURL } from "@/config/axios";
 import { StrapiFile } from "@/types/types";
 import Head from "next/head";
+import { PropsWithChildren } from "react";
 
 type Seo = {
   metaTitle: string;
@@ -67,7 +66,7 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
           />
           <meta
             property="og:image"
-            content={"/images/og.jpg"}
+            content={'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg'}
             key="og:image"
           />
           <link
@@ -81,7 +80,7 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
             <title>Falko project</title>
             <meta
               property="og:image"
-              content={"/images/og.jpg"}
+              content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
               key="og:image"
             />
           </>
@@ -134,7 +133,7 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
       )}
       <meta
         property="twitter:image"
-        content={"/images/og.jpg"}
+        content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
         key="og:image"
       />
 
