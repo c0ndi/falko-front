@@ -1,4 +1,3 @@
-import { strapiURL } from "@/config/axios";
 import { StrapiFile } from "@/types/types";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
@@ -37,7 +36,7 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
         content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
         key="og:image"
       />
-      {seoData ?
+      {seoData &&
         <>
           <title>{seoData.metaTitle}</title>
           <meta
@@ -69,27 +68,13 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
             content={seoData.metaDescription}
             key="og:description"
           />
-          <meta
-            property="og:image"
-            content={'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg'}
-            key="og:image"
-          />
           <link
             rel="canonical"
             href={seoData.canonicalURL}
           />
         </>
-        :
-        (
-          <>
-            <title>Falko project</title>
-            <meta
-              property="og:image"
-              content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
-              key="og:image"
-            />
-          </>
-        )}
+      }
+
 
       {seoData?.metaSocialFacebook && (
         <>
@@ -127,20 +112,11 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
             content={seoData.metaSocialTwitter.description}
           />
           <meta
-            property="og:image"
-            content={strapiURL + seoData.metaSocialTwitter.image?.data.attributes.url}
-          />
-          <meta
             property="og:type"
             content="article"
           />
         </>
       )}
-      <meta
-        property="twitter:image"
-        content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
-        key="og:image"
-      />
 
 
       <script type="application/ld+json">{seoStructuredData}</script>
@@ -178,11 +154,6 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
       <meta
         name="theme-color"
         content="#ffffff"
-      />
-      <meta
-        property="og:image"
-        content={"https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg"}
-        key="og:image"
       />
     </Head>
   )
