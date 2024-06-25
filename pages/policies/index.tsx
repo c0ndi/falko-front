@@ -1,7 +1,7 @@
-import PoliciesMobile from '@/public/images/policies-mobile.jpg';
 import PoliciesDesktop from '@/public/images/policies-desktop.jpg';
-import Image from "next/image";
+import PoliciesMobile from '@/public/images/policies-mobile.jpg';
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from 'next/router';
 
 function Polish() {
@@ -10,32 +10,34 @@ function Polish() {
          <h2>POLITYKA WYSYŁKI</h2>
 
          <p>
-            Wysyłka produktów dostępnych w magazynie trwa około 5 dni roboczych. Niestety, ze względu na nasz dwuosobowy zespół, wysyłka może potrwać nieco dłużej, gdy obciążenie pracą jest większe.
-            <br />
-            <br />
-            Wysyłka produktów zamówionych w przedsprzedaży trwa dłużej. Czas wysyłki zależy od produktu i jest podany na stronie zakupu.
-            Zwykle zajmuje to do 3 tygodni.
+            Czas realizacji wysyłki produktów dostępnych w magazynie wynosi około 5 dni roboczych. Ze względu na nasz mały zespół, czas ten może się wydłużyć w okresach większego obciążenia pracą.
          </p>
 
          <br />
          <br />
 
+         Wysyłka produktów zamówionych w przedsprzedaży trwa dłużej. Dokładny czas wysyłki zależy od konkretnego produktu i jest podany na stronie zakupu. Zwykle wynosi do 3 tygodni.
+
          <h2>POLITYKA ZWROTÓW</h2>
          <p>
-            Ze względu na charakter naszej działalności, obecnie akceptujemy tylko zwroty krajowe (bez wymiany).
+            Akceptujemy zwroty gotówki jak i wymiany w zależności od dostępności rozmiarów danego przedmiotu. Po informację odnośnie wymian prosimy o kontakt na maila info@falkoproject.com.
             <br />
             <br />
             Nasza siedziba znajduje się w Polsce.
-            <br />
-            Zwroty krajowe są przyjmowane tylko przez 14 dni - od dnia dostawy.
-            <br />
-            <br />
-            Przyjmujemy tylko zwroty przedmiotów, które nadal mają wszystkie metki i nie noszą śladów noszenia!
+            Zwroty krajowe przyjmujemy w ciągu 14 dni od dnia dostawy.            <br />
             <br />
             <br />
-            Przed odesłaniem towaru należy wypełnić formularz dołączony do papierowej koperty z zamówienia.
+            Akceptujemy zwroty tylko tych produktów, które mają wszystkie metki i nie noszą śladów użytkowania.            <br />
             <br />
+            Przed odesłaniem towaru, prosimy o wypełnienie formularza dołączonego do zamówienia.             <br />
             Aby uzyskać instrukcje dotyczące zwrotów, prosimy o kontakt mailowy: info@falkoproject.com
+            <br />
+            <br />
+            Instrukcja dokonania zwrotu znajduje się w formularzu.
+            Aby uzyskać etykietę zwrotną szczegółowe instrukcje dotyczące zwrotów, prosimy o kontakt mailowy: info@falkoproject.com.
+            <br />
+            <br />
+            Zwroty gotówki realizujemy w ciągu 2 tygodni od otrzymania przez nas zwracanego towaru.
          </p>
       </article>
    )
