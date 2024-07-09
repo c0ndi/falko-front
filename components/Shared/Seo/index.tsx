@@ -1,5 +1,4 @@
 import { StrapiFile } from "@/types/types";
-import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import { NextSeo } from "next-seo";
 import { PropsWithChildren } from "react";
 
@@ -30,38 +29,18 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
   const seoData = seo;
   const seoStructuredData = seo?.structuredData;
 
-  if (!seoData) {
-    return (
-      <NextSeo
-        title="Home - Falko Project"
-        description='let me be your guide through the story of redefined fashion and crumbled world'
-        canonical="https://web.falkoproject.com/en"
-        openGraph={{
-          url: 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
-          title: 'Home - Falko Project',
-          description: 'let me be your guide through the story of redefined fashion and crumbled world',
-          images: [{
-            url: 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
-            width: 850,
-            height: 650,
-            alt: 'Home - Falko Project',
-          }]
-        }}
-      />
-    )
-  }
-
+  // if (!seoData) {
   return (
     <NextSeo
-      title={seoData.metaTitle ?? 'Home - Falko Project'}
-      description={seoData.metaDescription ?? 'let me be your guide through the story of redefined fashion and crumbled world'}
-      canonical={seoData.canonicalURL ?? 'https://web.falkoproject.com/en'}
+      title="Home - Falko Project"
+      description='let me be your guide through the story of redefined fashion and crumbled world'
+      canonical="https://web.falkoproject.com/en"
       openGraph={{
-        url: getSimpleImageUri(seoData.metaImage) ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
-        title: seoData.metaTitle,
-        description: seoData.metaDescription,
+        url: 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+        title: 'Home - Falko Project',
+        description: 'let me be your guide through the story of redefined fashion and crumbled world',
         images: [{
-          url: getSimpleImageUri(seoData.metaImage) ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+          url: 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
           width: 850,
           height: 650,
           alt: 'Home - Falko Project',
@@ -69,4 +48,24 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
       }}
     />
   )
+  // }
+
+  // return (
+  //   <NextSeo
+  //     title={seoData.metaTitle ?? 'Home - Falko Project'}
+  //     description={seoData.metaDescription ?? 'let me be your guide through the story of redefined fashion and crumbled world'}
+  //     canonical={seoData.canonicalURL ?? 'https://web.falkoproject.com/en'}
+  //     openGraph={{
+  //       url: getSimpleImageUri(seoData.metaImage) ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+  //       title: seoData.metaTitle,
+  //       description: seoData.metaDescription,
+  //       images: [{
+  //         url: getSimpleImageUri(seoData.metaImage) ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+  //         width: 850,
+  //         height: 650,
+  //         alt: 'Home - Falko Project',
+  //       }]
+  //     }}
+  //   />
+  // )
 }
