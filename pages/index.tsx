@@ -1,11 +1,9 @@
-import Hero from "@/components/Home/Hero";
+import About from "@/components/Home/About";
 import Collection from "@/components/Home/Collection";
+import Hero from "@/components/Home/Hero";
 import OurManga from "@/components/Home/OurManga";
 import OurStoryboards from "@/components/Home/OurStoryboards";
-import About from "@/components/Home/About";
 import { getData } from "@/utils/getData";
-import Seo from "@/components/Shared/Seo";
-import { useRouter } from "next/router";
 
 export default function Home({ data }: any) {
    const {
@@ -19,7 +17,8 @@ export default function Home({ data }: any) {
 
    return (
       <>
-         <Seo seo={seo} />
+         {/* <Seo seo={seo} /> */}
+
          <Hero content={hero} />
          <Collection content={collection} />
          <OurManga
