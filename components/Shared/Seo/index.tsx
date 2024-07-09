@@ -39,6 +39,7 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
           url: 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
           title: 'Home - Falko Project',
           description: 'let me be your guide through the story of redefined fashion and crumbled world',
+          images: [{ url: 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg' }]
         }}
       />
     )
@@ -46,13 +47,14 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
 
   return (
     <NextSeo
-      title={seo.metaTitle ?? 'Home - Falko Project'}
-      description={seo.metaDescription ?? 'let me be your guide through the story of redefined fashion and crumbled world'}
-      canonical={seo.canonicalURL ?? 'https://web.falkoproject.com/en'}
+      title={seoData.metaTitle ?? 'Home - Falko Project'}
+      description={seoData.metaDescription ?? 'let me be your guide through the story of redefined fashion and crumbled world'}
+      canonical={seoData.canonicalURL ?? 'https://web.falkoproject.com/en'}
       openGraph={{
-        url: seo.metaImage ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
-        title: seo.metaTitle,
-        description: seo.metaDescription,
+        url: seoData.metaImage ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+        title: seoData.metaTitle,
+        description: seoData.metaDescription,
+        images: [{ url: seoData.metaImage ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg' }]
       }}
     />
   )
