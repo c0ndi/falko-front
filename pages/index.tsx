@@ -3,6 +3,7 @@ import Collection from "@/components/Home/Collection";
 import Hero from "@/components/Home/Hero";
 import OurManga from "@/components/Home/OurManga";
 import OurStoryboards from "@/components/Home/OurStoryboards";
+import Seo from "@/components/Shared/Seo";
 import { getData } from "@/utils/getData";
 
 export default function Home({ data }: any) {
@@ -17,8 +18,7 @@ export default function Home({ data }: any) {
 
    return (
       <>
-         {/* <Seo seo={seo} /> */}
-
+         <Seo seo={seo} />
          <Hero content={hero} />
          <Collection content={collection} />
          <OurManga
