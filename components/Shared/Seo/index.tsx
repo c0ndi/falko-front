@@ -5,7 +5,7 @@ import { PropsWithChildren } from "react";
 type Seo = {
   metaTitle: string;
   metaDescription: string;
-  metaImage: string;
+  metaImage: StrapiFile;
   metaSocialFacebook: {
     title: string;
     description: string;
@@ -56,11 +56,11 @@ export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
       description={seoData.metaDescription ?? 'let me be your guide through the story of redefined fashion and crumbled world'}
       canonical={seoData.canonicalURL ?? 'https://web.falkoproject.com/en'}
       openGraph={{
-        url: seoData.metaImage ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+        url: seoData.metaImage.data.attributes.url ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
         title: seoData.metaTitle,
         description: seoData.metaDescription,
         images: [{
-          url: seoData.metaImage ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
+          url: seoData.metaImage.data.attributes.url ?? 'https://strapi.falkoproject.com/uploads/431057761_1130037631464498_2642802240976394413_n_d5792f8824.jpg',
           width: 850,
           height: 650,
           alt: 'Home - Falko Project',
