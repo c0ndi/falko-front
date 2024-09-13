@@ -20,25 +20,7 @@ type FooterProps = {
 }
 
 export default function Footer({ content }: PropsWithChildren<{ content: FooterProps }>) {
-   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<{ email: string }>();
-   const [status, setStatus] = useState<"normal" | "sending" | "success" | "error">("normal");
-
    const router = useRouter();
-
-   const onSubmit = async (data: { email: string }) => {
-      setStatus("sending");
-
-      await axios.post('/customer-messages', { data: data }).then(() => {
-         setTimeout(() => {
-            setStatus("success");
-            reset();
-         }, 1000)
-      }).catch((err) => {
-         setStatus("error")
-         reset();
-      });
-   }
-
    const { address, phoneNumber, logoFooter } = content;
    return (
       <footer className={s.wrapper}>
@@ -83,34 +65,9 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
          </div>
 
          <div className={s.newsletter}>
-            <p>Subscribe To Our Newsletter</p>
-            <form
-               onSubmit={handleSubmit(onSubmit)}
-               className={s.input}
-            >
-               <input
-                  type="text"
-                  style={{ color: errors.email ? "red" : "#333" }}
-                  placeholder="Enter your email"
-                  {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
-               />
-
-               <button
-                  type={"submit"}
-                  className={s.iconWrapper}
-               >
-                  <Image
-                     src={ArrowBlack}
-                     alt={""}
-                     width={12}
-                     height={12}
-                  />
-               </button>
-            </form>
-            {status === "sending" && <p className={s.sending}>Sending...</p>}
-            {status === "success" && <p className={s.success}>Success!</p>}
-            {status === "error" && <p className={s.error}>Error. Try again later.</p>}
-            {errors.email && <p className={s.error}>Please enter correct email.</p>}
+            <Link href={'https://falkoproject.com/newsletter'} target='_blank'>
+               <p>Subscribe To Our Newsletter</p>
+            </Link>
          </div>
       </footer>
    )

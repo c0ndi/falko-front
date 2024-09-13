@@ -128,7 +128,7 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
                   {/*   className={s.japanText}*/}
                   {/*/>*/}
 
-                  <div className={s.socials}>
+                  {/* <div className={s.socials}>
                      <p className={s.socialLabel}>{socialLabel}</p>
                      <div className={s.socialIcons}>
                         <Link href={data.youtubeLink} target={"_blank"}>
@@ -164,13 +164,16 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
                            />
                         </Link>
                      </div>
-                  </div>
+                  </div> */}
                </div>
 
                <div className={s.contentWrapper}>
                   <div>
                      <p className={s.descriptionHeading}>{descriptionHeading}</p>
-                     <p className={s.descW}>{descriptionText}</p>
+                     <p style={{
+                        fontSize: "15px",
+                        fontFamily: "JumperRegular"
+                     }}>{descriptionText}</p>
                   </div>
 
                   <div className={s.infoWrapper}>
@@ -193,7 +196,7 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
                      </div>
                   </Link>
 
-                  <div className={s.socialsMobile}>
+                  {/* <div className={s.socialsMobile}>
                      <p className={s.socialLabel}>{socialLabel}</p>
                      <div className={s.socialIcons}>
                         <Link href={data.youtubeLink} target={"_blank"}>
@@ -229,7 +232,7 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
                            />
                         </Link>
                      </div>
-                  </div>
+                  </div> */}
                </div>
             </div>
          </div>

@@ -2,7 +2,7 @@
 
 .wrapper {
   padding: 45px 12px;
-  font-family: "Arial";
+  font-family: "Anton";
 
   & * {
     color: #fff !important;
@@ -100,6 +100,7 @@
 }
 
 .infoWrapper {
+  font-family: "JumperRegular";
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -111,6 +112,7 @@
 }
 
 .email {
+  font-family: "JumperRegular";
   font-size: 19px;
   font-weight: 700;
   width: max-content;

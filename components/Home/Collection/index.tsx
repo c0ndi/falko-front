@@ -1,9 +1,8 @@
 import SingleItem, { SingleItemT } from "@/components/Home/Collection/SingleItem";
-import StoreGraphicEn from '@/public/images/store-desktop-en.png';
-import StoreGraphicPl from '@/public/images/store-desktop-pl.png';
-import StoreGraphicMobileEn from '@/public/images/store-mobile-en.png';
-import StoreGraphicMobilePl from '@/public/images/store-mobile-pl.png';
-import Gif from '@/public/images/walking.gif';
+import StoreGraphicEn from '@/public/images/store-web-eng.webp';
+import StoreGraphicPl from '@/public/images/store-web-pl.webp';
+// import StoreGraphicMobileEn from '@/public/images/store-mobile-en.png';
+// import StoreGraphicMobilePl from '@/public/images/store-mobile-pl.png';
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
@@ -47,30 +46,30 @@ export default function Collection({ content }: PropsWithChildren<{ content: Col
             <Image
                src={router.locale === "en" ? StoreGraphicEn : StoreGraphicPl}
                alt={"StoreGraphic"}
-               style={{ width: "100%", marginBottom: "60px", objectFit: "contain" }}
+               style={{ width: '100%', height: "auto" }}
                className={s.storeGraphic}
             />
          </Link>
 
-         <Link href={storeButtonLink} target={"_blank"}>
+         {/* <Link href={storeButtonLink} target={"_blank"}>
             <Image
                src={router.locale === "en" ? StoreGraphicMobileEn : StoreGraphicMobilePl}
                alt={"StoreGraphicMobile"}
                style={{ width: "100%", marginBottom: "60px" }}
                className={s.storeGraphicMobile}
             />
-         </Link>
+         </Link> */}
 
-         <p className={s.heading}>{router.locale === "en" ? "HOTTEST STUFF" : "WYRÓŻNIONE"} </p>
+         {/* <p className={s.heading}>{router.locale === "en" ? "HOTTEST STUFF" : "WYRÓŻNIONE"} </p> */}
 
          <div className={s.itemsWrapper}>
-            <Image
+            {/* <Image
                src={Gif}
                alt={""}
                className={s.japaneseText}
                priority
                height={250}
-            />
+            /> */}
 
 
             {example_products.data.map((item, index) => (

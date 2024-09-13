@@ -5,8 +5,7 @@ import Image from "next/image";
 import 'swiper/css';
 import Link from "next/link";
 import RichText from "@/components/Shared/RichText";
-import FalkoArchive from "@/public/images/falko-archive.png";
-import FalkoSketchbookMobile from "@/public/images/falko-sketchbook-mobile.webp";
+import FalkoArchive from "@/public/images/falko-archive.webp";
 
 type Storyboard = {
    attributes: {
