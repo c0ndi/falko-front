@@ -65,7 +65,7 @@ export default function Footer({ content }: PropsWithChildren<{ content: FooterP
          </div>
 
          <div className={s.newsletter}>
-            <Link href={'https://falkoproject.com/newsletter'} target='_blank'>
+            <Link href={`https://store.falkoproject.com${router.locale}/newsletter`} target='_blank'>
                <p>Subscribe To Our Newsletter</p>
             </Link>
          </div>

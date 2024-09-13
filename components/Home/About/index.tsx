@@ -172,7 +172,7 @@ export default function About({ content }: PropsWithChildren<{ content: AboutPro
                      <p className={s.descriptionHeading}>{descriptionHeading}</p>
                      <p style={{
                         fontSize: "15px",
-                        fontFamily: "JumperRegular"
+                        fontFamily: "Arial"
                      }}>{descriptionText}</p>
                   </div>
 

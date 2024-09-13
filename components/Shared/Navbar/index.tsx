@@ -96,7 +96,7 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
             <ul>
                {navLinks.map((link, index) => (
                   <li key={index}>
-                     <Link href={link.linkUrl}>
+                     <Link href={link.linkUrl} target={link.linkUrl.includes("http") ? "_blank" : ""}>
                         <p>{link.linkLabel.toUpperCase()}</p>
                      </Link>
                   </li>
@@ -188,6 +188,7 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                      <Link
                         href={link.linkUrl}
                         onClick={() => setOpen(false)}
+                        target={link.linkUrl.includes("http") ? "_blank" : ""}
                      >
                         <p>{link.linkLabel.toUpperCase()}</p>
                      </Link>
