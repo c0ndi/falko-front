@@ -57,6 +57,9 @@ export default function OurStoryboards({ content }: PropsWithChildren<{ content:
             <Link
                href={"/"}
                className={s.link}
+               style={{
+                  fontFamily: "Coolvetica"
+               }}
             >
                {linkLabel}
             </Link>

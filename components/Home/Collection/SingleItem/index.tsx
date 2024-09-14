@@ -45,7 +45,7 @@ export default function SingleItem({ content }: { content: SingleItemT }) {
                         <p className={s.price}>{price}</p>
                     </div>
 
-                    <span style={{ fontFamily: "Arial" }}>{router.locale == "en" ? "Check out" : "Kup teraz"}</span>
+                    <span style={{ fontFamily: "Coolvetica" }}>{router.locale == "en" ? "Check out" : "Kup teraz"}</span>
                 </div>
             </Link>
         </article>
