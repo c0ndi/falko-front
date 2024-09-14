@@ -1,7 +1,8 @@
 @import "@/styles/shared.scss";
 
 .wrapper {
-  padding: 90px 12px;
+  padding-bottom: 90px;
+  padding-inline: 12px;
   max-width: 1280px;
   margin: 0 auto;
   font-family: "Anton";
@@ -79,7 +80,7 @@
 
 @media (max-width: 1080px) {
   .wrapper {
-    padding: 24px 12px 60px;
+    padding: 0px 12px 60px;
   }
 
   .bottomWrapper {
@@ -107,7 +108,7 @@
 
 @media (max-width: 829px) {
   .wrapper {
-    padding: 24px 12px 60px;
+    padding: 0px 12px 60px;
   }
 
   .itemsWrapper {
@@ -135,7 +136,7 @@
 
 @media (max-width: 439px) {
   .wrapper {
-    padding: 50px 12px 60px;
+    padding: 0px 12px 60px;
   }
 
   .itemsWrapper {
