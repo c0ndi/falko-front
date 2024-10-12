@@ -1,6 +1,6 @@
 import SingleItem, { SingleItemT } from "@/components/Home/Collection/SingleItem";
-import StoreGraphicEn from '@/public/images/store-web-eng.webp';
-import StoreGraphicPl from '@/public/images/store-web-pl.webp';
+import StoreGraphicEn from '@/public/images/store-web-eng.png';
+import StoreGraphicPl from '@/public/images/store-web-pl.png';
 // import StoreGraphicMobileEn from '@/public/images/store-mobile-en.png';
 // import StoreGraphicMobilePl from '@/public/images/store-mobile-pl.png';
 import Image from "next/image";
