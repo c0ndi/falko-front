@@ -13,10 +13,11 @@ export type SingleItemT = {
     soldOutBadge?: boolean;
     comingSoonBadge?: boolean;
     newBadge?: boolean;
+    saleBadge?: boolean;
 }
 
 export default function SingleItem({ content }: { content: SingleItemT }) {
-    const { title, shopLink, price, cover, soldOutBadge, comingSoonBadge, newBadge } = content;
+    const { title, shopLink, price, cover, soldOutBadge, comingSoonBadge, newBadge, saleBadge } = content;
 
     const router = useRouter();
     return (
@@ -29,6 +30,7 @@ export default function SingleItem({ content }: { content: SingleItemT }) {
                     {soldOutBadge && <p className={s.soldOutBadge}>SOLD OUT</p>}
                     {comingSoonBadge && <p className={s.comingSoonBadge}>COMING SOON</p>}
                     {newBadge && <p className={s.newBadge}>NEW</p>}
+                    {saleBadge && <p className={s.saleBadge}>SALE</p>}
                 </div>
                 <div className={s.imageWrapper}>
                     <Image
