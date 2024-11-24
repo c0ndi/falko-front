@@ -37,7 +37,7 @@ export default function OurStoryboards({ content }: PropsWithChildren<{ content:
          <div className={s.bottomWrapper}>
             <div className={s.topWrapper}>
                <div>
-                  <p className={s.subheading}>{subheading}</p>
+                  <p className={`${s.subheading} ${s.japanaseText}`}>{subheading}</p>
                   <p className={s.heading}>{heading.toUpperCase()}</p>
                   <p className={s.subheading}>{secondSubheading.toUpperCase()}</p>
                </div>

@@ -13,10 +13,11 @@
 }
 
 .heading {
+  font-family: "DanburyCaps";
   font-weight: 600;
-  font-size: 72px;
+  font-size: 54px;
   color: #000;
-  line-height: 80px;
+  line-height: 70px;
 }
 
 .subheading {
@@ -24,6 +25,10 @@
   font-family: "Coolvetica";
   font-size: 24px;
   color: #000;
+}
+
+.japanaseText {
+  font-family: "ZenMaruGothic";
 }
 
 @media (max-width: 1080px) {

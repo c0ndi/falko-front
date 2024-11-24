@@ -1,7 +1,7 @@
 import s from './index.module.scss'
-import {PropsWithChildren} from "react";
-import {StrapiFile} from "@/types/types";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { PropsWithChildren } from "react";
+import { StrapiFile } from "@/types/types";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import Image from "next/image";
 
 type HeroProps = {
@@ -10,8 +10,8 @@ type HeroProps = {
    cover: StrapiFile;
 }
 
-export default function Hero({content}: PropsWithChildren<{ content: HeroProps }>) {
-   const {title, subheading, cover} = content;
+export default function Hero({ content }: PropsWithChildren<{ content: HeroProps }>) {
+   const { title, subheading, cover } = content;
    return (
       <section className={s.wrapper}>
          <Image

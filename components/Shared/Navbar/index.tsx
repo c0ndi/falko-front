@@ -63,34 +63,18 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
       >
          <div className={s.innerWrapper}>
             <Link href={"/"}>
-               {!scrollImage ? (
-                  <Image
-                     src={getSimpleImageUri(logoNav)}
-                     alt={"Logo"}
-                     width={60}
-                     height={60}
-                     priority
-                     className={s.logo}
-                     onClick={() => window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                     }) || setOpen(false)}
-                  />
-               )
-                  :
-                  <Image
-                     src={getSimpleImageUri(logoNav)}
-                     alt={"Logo"}
-                     width={60}
-                     height={60}
-                     priority
-                     className={s.logo}
-                     onClick={() => window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                     }) || setOpen(false)}
-                  />
-               }
+               <Image
+                  src={getSimpleImageUri(logoNav)}
+                  alt={"Logo"}
+                  width={54}
+                  height={54}
+                  priority
+                  className={s.logo}
+                  onClick={() => window.scrollTo({
+                     top: 0,
+                     behavior: "smooth",
+                  }) || setOpen(false)}
+               />
             </Link>
 
             <ul>

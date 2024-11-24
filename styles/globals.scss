@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+// @font-face {
+//   font-family: TsunagiGothic;
+//   src: url("../fonts/JumperRegular.ttf");
+// }
 @font-face {
-  font-family: TsunagiGothic;
-  src: url("../fonts/JumperRegular.ttf");
+  font-family: ZenMaruGothic;
+  src: url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.ttf");
 }
 @font-face {
-  font-family: Coolvetica;
+  font-family: DanburyCaps;
   src: url("../fonts/danbury_caps/DanburyCaps.otf");
 }
+
 @font-face {
-  font-family: Anton;
-  src: url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.ttf");
+  font-family: Coolvetica;
+  src: url("../fonts/Coolvetica.otf");
 }
 
 :root {
@@ -20,7 +25,7 @@
 * {
   // font-family: TsunagiGothic;
   box-sizing: border-box;
-  font-family: "Anton", system-ui;
+  font-family: "Coolvetica", system-ui;
 }
 
 *,
@@ -52,7 +57,7 @@ img {
 }
 
 .errorPage {
-  font-family: "Anton";
+  font-family: "Coolvetica";
   height: 90vh;
   display: flex;
   justify-content: center;
