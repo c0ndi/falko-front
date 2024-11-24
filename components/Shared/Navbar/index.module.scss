@@ -54,10 +54,26 @@
   width: max-content;
 }
 
+.hamburgerDark {
+  display: none;
+  z-index: 3;
+  transform: translateX(6px);
+  color: #c4c2b6;
+
+  div[aria-expanded="true"] {
+    color: #000000;
+  }
+}
+
 .hamburger {
   display: none;
   z-index: 3;
   transform: translateX(6px);
+  color: #000000;
+
+  div[aria-expanded="true"] {
+    color: #000000;
+  }
 }
 
 .mobileMenu {
@@ -147,6 +163,11 @@
   }
 
   .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .hamburgerDark {
     display: block;
     margin-left: auto;
   }

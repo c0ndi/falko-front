@@ -79,7 +79,7 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                )
                   :
                   <Image
-                     src={'/images/falko-black.png'}
+                     src={getSimpleImageUri(logoNav)}
                      alt={"Logo"}
                      width={60}
                      height={60}
@@ -172,13 +172,24 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
 
             </div>
 
-            <div className={s.hamburger}>
-               <Hamburger
-                  toggled={isOpen}
-                  toggle={setOpen}
-                  size={24}
-               />
-            </div>
+            {scrollImage ? (
+               <div className={s.hamburger}>
+                  <Hamburger
+                     toggled={isOpen}
+                     toggle={setOpen}
+                     size={24}
+                  />
+               </div>
+            ) : (
+               <div className={s.hamburgerDark}>
+                  <Hamburger
+                     toggled={isOpen}
+                     toggle={setOpen}
+                     size={24}
+                  />
+               </div>
+            )}
+
          </div>
 
          <div className={`${isOpen ? s.mobileOpen : s.mobileClose} ${s.mobileMenu}`}>
@@ -250,6 +261,6 @@ export default function Navbar({ content }: PropsWithChildren<{ content: NavProp
                </Link>
             </div>
          </div>
-      </nav>
+      </nav >
    )
 }
